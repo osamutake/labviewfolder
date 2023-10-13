@@ -12,7 +12,7 @@ ParameterSweeper.vi
 --
 
 - 任意の VI の任意のコントロールの値を１秒おきとかで徐々に変えるための VI
-- ゆっくりパラメータを振りながら [`ADCDaraRecorder.vi`](../hardware/Readme.md#adcdatarecordervi--adc-の電圧値を記録するアプリ) でデータを保存する使い方を想定している
+- ゆっくりパラメータを振りながら [`ADCDaraRecorder.vi`](../hardware/#adcdatarecordervi--adc-の電圧値を記録するアプリ) でデータを保存する使い方を想定している
 
 ![](image4md/panel-ParameterSweeper.png)
 
@@ -26,8 +26,8 @@ ParameterSweeper.vi
 - `round trip` はクリックでトグルする `on` だと掃引が往復になる
 - `Second Dimension` が `on` だと、上の行で指定された掃引が終わるたびに下の行で指定された値が `step 2` ずつ変更され、二次元的な掃引が行われるようになる
 - `Swap` を押すと1行目と2行目の値が入れ替わる
-- `Record Sync` を `on` にしておくと、`Sweep Start` を押すと同時に [`ADCDataRecorder.vi`](../hardware/Readme.md#adcdatarecordervi--adc-の電圧値を記録するアプリ) の `Measure` ボタンが押され、値の掃引と同期してデータの測定を開始できる
-- `Interval (s)` をあまり小さくすると処理が間に合わなかったり設定タイミングの誤差が問題になったりするけれど、時定数が `100 ms` 以上のロックインアンプを使った測定を念頭に置くと、この VI と [`ADCDataRecorder.vi`](../hardware/Readme.md#adcdatarecordervi--adc-の電圧値を記録するアプリ) を使うだけでどんなパラメータでも掃引測定が行えてとても便利
+- `Record Sync` を `on` にしておくと、`Sweep Start` を押すと同時に [`ADCDataRecorder.vi`](../hardware/#adcdatarecordervi--adc-の電圧値を記録するアプリ) の `Measure` ボタンが押され、値の掃引と同期してデータの測定を開始できる
+- `Interval (s)` をあまり小さくすると処理が間に合わなかったり設定タイミングの誤差が問題になったりするけれど、時定数が `100 ms` 以上のロックインアンプを使った測定を念頭に置くと、この VI と [`ADCDataRecorder.vi`](../hardware/#adcdatarecordervi--adc-の電圧値を記録するアプリ) を使うだけでどんなパラメータでも掃引測定が行えてとても便利
 - `Interval (s)` は 0.5 秒くらいで使うことを想定している
 
 SettingManager.vi
@@ -69,4 +69,4 @@ LabVIEW 上に http サーバーを建てて、http 経由でコントロール�
 
 これを使うと LabVIEW 以外のプログラムから VI 上のコントロールにアクセスできるようになる。
 
-詳細は [WebAPI/Readme.md](WebAPI/Readme.md) を参照のこと
+詳細は [./WebAPI/](WebAPI/) を参照のこと

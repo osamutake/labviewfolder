@@ -10,11 +10,11 @@ Lib/
 サブフォルダ
 --
 
-- [`File/`](File/Readme.md) ファイル関連
-- [`SetGetControlValue/`](SetGetControlValue/Readme.md) コントロール値の読み書きを行う
-- [`String/`](String/Readme.md) 文字列関連、JSON 関連
-- [`UI/`](UI/Readme.md) UI関連
-- [`Variant/`](Variant/Readme.md) `Variant` 関連
+- [`File/`](File/) ファイル関連
+- [`SetGetControlValue/`](SetGetControlValue/) コントロール値の読み書きを行う
+- [`String/`](String/) 文字列関連、JSON 関連
+- [`UI/`](UI/) UI関連
+- [`Variant/`](Variant/) `Variant` 関連
 
 
 RaiseErrorIf.vi = true が入力されたときのみエラーを発生する

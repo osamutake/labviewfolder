@@ -26,7 +26,7 @@ ADCDataRecorder.vi = ADC の電圧値を記録するアプリ
   - `Header Text for Data Files` に入れた内容がデータファイルのヘッダー部分にコメントとして保存される
   - `Parameters To Save` に VI 名とコントロール名のリストを指定することで、ファイル保存開始時にそれらのコントロールの値を読み取り、コメント等と共にデータファイルのヘッダー部分に保存される
   - 計測パラメータを保存しておくのに便利なはず
-  - VI 名とコントロール名のリストの指定の仕方は [GetControlValues.vi の説明](../lib/SetGetControlValue/Readme.md#getcontrolvaluesvi) を参照のこと
+  - VI 名とコントロール名のリストの指定の仕方は [GetControlValues.vi の説明](../lib/SetGetControlValue/#getcontrolvaluesvi) を参照のこと
   - `Time` と `NChannels` はそれぞれ現在時刻とチャンネル数で、これらの値もデータファイルのヘッダーに保存される
 
 データファイルの構造は、測定情報を含めたヘッダー部に測定結果のバイナリデータが続く形になる。
@@ -40,7 +40,7 @@ DACSinglePoint.vi = DAC の電圧値を制御するアプリ
 --
 コントロールの値を変更すると DAC の電圧値を変更するというだけのアプリケーション
 
-[`ParameterSweeper.vi`](../utilities/Readme.md#parametersweepervi) と組み合わせると周期的に値の掃引を行える。
+[`ParameterSweeper.vi`](../utilities/#parametersweepervi) と組み合わせると周期的に値の掃引を行える。
 
 ![](image4md/panel-DACSinglePoint.png)
 
@@ -57,8 +57,8 @@ DACSinglePoint.vi = DAC の電圧値を制御するアプリ
   - 電圧と物理量の間の係数を `Coefficient` に入れると設定が楽になる
   - `Label` は人が入力する際に分かりやすい名前を入れておくための欄で、機能上の意味はない
 - このアプリだけだと人がちまちま値を入れて電圧を変えることしかできない
-- [`ParameterSweeper.vi`](../utilities/Readme.md#parametersweepervi) と組み合わせて使うのがこのアプリの主な用途
+- [`ParameterSweeper.vi`](../utilities/#parametersweepervi) と組み合わせて使うのがこのアプリの主な用途
   - VI 名 `DaACSinglePoint`
   - コントロール名 `Label & Value & Coefficient[0]/Value`
-  - などとして [`ParameterSweeper.vi`](../utilities/Readme.md#parametersweepervi) で値を掃引可能
-- 異なる測定ごとに [`SettingManager.vi`](../utilities/Readme.md#settingmanagervi) で `Physical channels`, `Label & Value & Coefficient` の値を設定すると使い勝手が良いはず
+  - などとして [`ParameterSweeper.vi`](../utilities/#parametersweepervi) で値を掃引可能
+- 異なる測定ごとに [`SettingManager.vi`](../utilities/#settingmanagervi) で `Physical channels`, `Label & Value & Coefficient` の値を設定すると使い勝手が良いはず

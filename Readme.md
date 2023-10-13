@@ -17,13 +17,13 @@ MIT ライセンスとしますので自由にご利用ください。
 --
 
 - `applications/` この git に含めない個別のアプリケーションを置く
-- [`hardware/`](hardware/Readme.md) ハードウェア関連ライブラリ
-- [`lib/`](lib/Readme.md) 汎用のサブ VI ライブラリ
-- [`utilities/`](utilities/Readme.md) 単独で利用するVIアプリ
+- [`hardware/`](hardware/) ハードウェア関連ライブラリ
+- [`lib/`](lib/) 汎用のサブ VI ライブラリ
+- [`utilities/`](utilities/) 単独で利用するVIアプリ
 
 LabVIEW メタプログラミングの勧め
 --
-このライブラリには [`SetControlValue.vi`](lib/SetGetControlValue/Readme.md#setcontrolvaluevi) / [`GetControlValue.vi`](lib/SetGetControlValue/Readme.md#getcontrolvaluevi) という「異なるVI上のコントロールの値を読み書きするためのサブVI」が含まれています。
+このライブラリには [`SetControlValue.vi`](lib/SetGetControlValue/#setcontrolvaluevi) / [`GetControlValue.vi`](lib/SetGetControlValue/#getcontrolvaluevi) という「異なるVI上のコントロールの値を読み書きするためのサブVI」が含まれています。
 
 これを使って「LabVIEW のコントロールの値を制御するプログラム」を LabVIEW で作ることを、ここでは「LabVIEW メタプログラミング」と呼ぼうと思います。
 
@@ -43,20 +43,20 @@ LabVIEW メタプログラミングの勧め
 
 こんなときに、
 
-- VI 名とコントロール名と設定値を文字列で指定して値を書き込める [`SetControlValue.vi`](lib/SetGetControlValue/Readme.md#setcontrolvaluevi)
-- VI 名とコントロール名を文字列で指定して、その値を文字列として得られる [`GetControlValue.vi`](lib/SetGetControlValue/Readme.md#getcontrolvaluevi)
+- VI 名とコントロール名と設定値を文字列で指定して値を書き込める [`SetControlValue.vi`](lib/SetGetControlValue/#setcontrolvaluevi)
+- VI 名とコントロール名を文字列で指定して、その値を文字列として得られる [`GetControlValue.vi`](lib/SetGetControlValue/#getcontrolvaluevi)
 
 があると、個々の装置の制御を行うだけの単機能の VI を組み合わせて複雑な測定を行うことが容易にできるようになります。
 
 例として、、、
 
-このライブラリに含まれる [`DACSinglePoint.vi`](hardware/Readme.md#dacsinglepointvi--dac-の電圧値を制御するアプリ) は DAC の出力電圧を変更するための制御器が並ぶ、非常に単純な VI です。
+このライブラリに含まれる [`DACSinglePoint.vi`](hardware/#dacsinglepointvi--dac-の電圧値を制御するアプリ) は DAC の出力電圧を変更するための制御器が並ぶ、非常に単純な VI です。
 
 ![](hardware/image4md/panel-DACSinglePoint.png)
 
 `Physical channels` に DAC チャンネルを指定して、対応する `Value` 欄を書き換えると電圧が出ます。
 
-これだけだと何の面白みもないのですが、[`ParameterSweeper.vi`](utilities/Readme.md#parametersweepervi) と組み合わせると、急に利用価値のあるものになってきます。
+これだけだと何の面白みもないのですが、[`ParameterSweeper.vi`](utilities/#parametersweepervi) と組み合わせると、急に利用価値のあるものになってきます。
 
 ![](utilities/image4md/panel-ParameterSweeper.png)
 
@@ -64,7 +64,7 @@ LabVIEW メタプログラミングの勧め
 
 `ParameterSweeper.vi` はどの制御器の値を変更するかを `vi` と `ctrl` で変更可能なので、どんな機器のどんなパラメータでも周期的に掃引できます。これが１つあれば「値を掃引する」というプロブラムを作る必要がなくなります。このように、メタプログラミング的なやり方により、制御アルゴリズムを制御される VI と完全に独立させて開発できるようになります。
 
-制御するだけでなく測定も行いたいので [`ADCDataRecorder.vi`](hardware/Readme.md#adcdatarecordervi--adc-の電圧値を記録するアプリ) を使います。
+制御するだけでなく測定も行いたいので [`ADCDataRecorder.vi`](hardware/#adcdatarecordervi--adc-の電圧値を記録するアプリ) を使います。
 
 ![](hardware/image4md/panel-ADCDataRecorder.png)
 
@@ -74,13 +74,13 @@ LabVIEW メタプログラミングの勧め
 
 注目すべきは `Parameters to Save` の欄です。ここに VI 名とコントロール名を列挙するとデータ保存の開始時にコントロールから値を読み出してデータファイルのヘッダーに追加できます。「このデータを測定したときの設定値があやふや」という事態を防ぐには VI のコントロールの値をデータファイルに保存しておくのが一番ですが、普通にそれをしようと思うとデータ書き込みロジックのところで数十個のコントロールから値を読みだして、すべてを文字列に直さなければならず、新しい測定用に VI を作るたびにそれを書くのはものすごくおっくうです。
 
-このリポジトリに含まれるライブラリはコントロールからの値を文字列として読み出せるため、そのままファイルに保存できます。また、複数のVIにある複数のコントロールの値をまとめて読み書きするための [`SetControlValues.vi`](lib/SetGetControlValue/Readme.md#setcontrolvaluesvi) / [`GetControlValues.vi`](lib/SetGetControlValue/Readme.md#getcontrolvaluesvi) も提供されています（分かりにくいですが Value's' と s が付いています）。
+このリポジトリに含まれるライブラリはコントロールからの値を文字列として読み出せるため、そのままファイルに保存できます。また、複数のVIにある複数のコントロールの値をまとめて読み書きするための [`SetControlValues.vi`](lib/SetGetControlValue/#setcontrolvaluesvi) / [`GetControlValues.vi`](lib/SetGetControlValue/#getcontrolvaluesvi) も提供されています（分かりにくいですが Value's' と s が付いています）。
 
 これで、任意の機器制御 VI の任意の制御器の値を掃引して ADC でデータを測定し、測定パラメータと共にファイルに保存する、という難しいタスクを、「制御器の値が変わったら機器の設定を変更する」という単機能 VI を作成するだけで行えるようになりました。
 
 あとは複数のの機器制御 VI の上にある制御器の値を測定の種類ごとに初期化することができれば言うことがありません？
 
-[SettingManager.vi](utilities/Readme.md#settingmanagervi) は、複数の VI にまたがって多数の制御器の値を「設定」として複数保存しておき、ダブルクリック一発で値を復元することが可能なアプリケーションです。
+[SettingManager.vi](utilities/#settingmanagervi) は、複数の VI にまたがって多数の制御器の値を「設定」として複数保存しておき、ダブルクリック一発で値を復元することが可能なアプリケーションです。
 
 ![](utilities/image4md/panel-SettingManager.png)
 
