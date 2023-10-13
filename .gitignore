@@ -1,0 +1,3 @@
+/applications/*
+!/applications/.keep
+/not-in-use
