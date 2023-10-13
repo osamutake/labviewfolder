@@ -47,8 +47,13 @@ DACSinglePoint.vi = DAC の電圧値を制御するアプリ
 - `Physical channels` にデバイス名と AO チャンネルを（複数）指定する
   - `Dev1/ao0:1` や `Dev1/ao0,Dev1/ao2` のような指定が可能
   - 指定されたチャンネル数分だけ `Label &Value & Coefficient` が有効になる
+  - チャンネルの指定順と `Label &Value & Coefficient` の順が対応するので
+    - `Physical channels` が `Dev1/ao1,Dev1/ao0` なら 
+    - 1行目が `Dev1/ao1` に、
+    - 2行目が `Dev4/ao0` に対応する
 - `Enable` を押すと `Value` と `Coefficient` を掛けた値が DAC へ出力される
   - `Enable` が `on` の状態で値を変更すると即座に DAC の値も変更される
+  - `Enable` が `off` だといくら値を変更しても DAC に出力されないので注意
   - 電圧と物理量の間の係数を `Coefficient` に入れると設定が楽になる
   - `Label` は人が入力する際に分かりやすい名前を入れておくための欄で、機能上の意味はない
 - このアプリだけだと人がちまちま値を入れて電圧を変えることしかできない
