@@ -21,7 +21,6 @@ Lib/SetGetControlValue
     - [GetControlValues.vi](#getcontrolvaluesvi)
     - [VINameToVI.vi](#vinametovivi)
   - [技術的な話](#技術的な話)
-  - [TODO](#todo)
 
 概要
 --
@@ -311,11 +310,16 @@ JSON には大雑把にプリミティブデータ、配列、オブジェクト
   - VI 名にアプリケーション名（プロジェクト名）を含めることができ、その場合にはこの端子は無視される
   - [アプリケーションとVIの関係についてはこちらを参照](#アプリケーションとviの関係)
 - `UseEnum (true)` : `Enum` や `Ring` コントロールの値を文字列ではなく数値として得たい場合には `false` を指定する
-- `ControlValuesInJSON` : 読み出されたコントロール値がネストした JSON オブジェクトとして得られる
+- `As List` : 読みだされた値を JSON として返すか(false)、そのまま `SetControlValues.vi` に渡せる文字列として返すか(true)、を選択する
+- `Control Value` : 読み出された値
+  - `As List` が `false` ならコントロール値がネストした JSON オブジェクトとして得られる
   - オブジェクトのキーは VI 名あるいはその表示名
     - 要素はやはりオブジェクト
       - キーはコントロール名あるいはその表示名
       - 要素はコントロール値
+  - `As List` が `true` ならそのまま `SetControlValues.vi` に渡せる文字列として得られる
+    - 後にコントロールへ書き戻すのであればこちらが便利
+    - `As List` が `true` のとき、指定された「表示名」は無視される
 
 ### VINameToVI.vi
 
@@ -360,7 +364,3 @@ VI 名から `VI reference` を得る。
   - 驚くべきことに(?)、`GetControlIndexByName` で得られるコントロールインデックスは `Controls[]` 内のインデックスじゃないので役に立たない
 - アプリケーション名や VI 名、コントロール名をメモ化して、二度目からは検索の必要をなくすと効率アップを図れるのだけれど、VI を開きなおしたり、コントロールを追加・削除したときにメモを初期化する手段を用意するなど考えるとちょっと面倒？
   - あまり効率が問題になる使い方はしないと割り切ってこのまま行こう
-
-TODO
---
-- `GetControlValues.vi` で JSON 形式ではなく、そのまま `SetControlValues.vi` に与えられる形式でも結果を得られると便利かもしれない
