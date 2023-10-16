@@ -3,6 +3,13 @@
 
 公開可能なものをここに公開します。
 
+- [個人的に使っている LabView 用のワーキングフォルダーです](#個人的に使っている-labview-用のワーキングフォルダーです)
+  - [GitHub アドレス](#github-アドレス)
+  - [ライセンス](#ライセンス)
+  - [フォルダ一覧](#フォルダ一覧)
+  - [LabVIEW メタプログラミングの勧め](#labview-メタプログラミングの勧め)
+  - [改訂履歴](#改訂履歴)
+
 GitHub アドレス
 --
 https://github.com/osamutake/labviewfolder
@@ -93,3 +100,13 @@ LabVIEW メタプログラミングの勧め
 上記の `ParameterSweeper.vi` や `DataRecorder.vi` は非常に汎用性の高いプログラムなので、異なる測定には異なる設定で利用したくなるのですが、それぞれに対する設定を `SettingManager.vi` で保存しておけば簡単に測定を開始できます。
 
 ということで、LabVIEW メタプログラミングをお勧めしています。
+
+改訂履歴
+--
+- 2023-10-13 初出
+- 2023-10-16
+  - [`lib/SetGetControlValue`](lib/SetGetControlValue) や [`utilities/SettingManager.vi`](utilities/#settingmanagervi) でコントロール名に含まれる改行やタブ文字をエスケープするように/できるようにした
+  - [`lib/#技術的な話`](lib/#技術的な話)　で LabVIEW 標準の VI の関数 GetControlIndexByName からはコントロールのリファレンスを得られないことを追記した
+  - 未保存の `Untitled 1.vi` のような VI に対しては VI のリファレンスを取れない。これが原因で [`utilities/SettingManager.vi`](utilities/#settingmanagervi) がエラーを吐くのを抑制した。エラーの生じた VI の下にはコントロールが表示されず空になる。
+  - [lib/SetGetControlValue/#クローン V Iについて](lib/SetGetControlValue/#クローン-VI-について) にてクローン VI に対しては VI リファレンスを取る手段が提供されていないという記載を LabVIEW ヘルプに発見したので追記した
+

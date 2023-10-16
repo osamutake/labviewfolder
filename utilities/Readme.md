@@ -43,6 +43,7 @@ SettingManager.vi
 ![](image4md/panel-SettingManager.png)
 
 - VI を立ち上げると左側に VI とそのコントロールの一覧が、現在の値と共に表示される
+  - クローン VI や、一度も保存していない `Untitled 2.vi` のような VI はサポートされない
 - 新しい VI を開いた後など、`Reload Control Tree` を押すとこの表示を更新できる
 - VI やコントロールの行をクリックあるいは Ctrl+クリック することで選択・選択解除を行える
 - 保存しておきたいコントロールをすべて選択したら `Save` ボタンを押すと右側に新しい設定項目が追加される
