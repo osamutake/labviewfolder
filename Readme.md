@@ -112,3 +112,5 @@ LabVIEW メタプログラミングの勧め
   - [lib/SetGetControlValue/#クローン V Iについて](lib/SetGetControlValue/#クローン-VI-について) にてクローン VI に対しては VI リファレンスを取る手段が提供されていないという記載を LabVIEW ヘルプに発見したので追記した
   - [`utilities/SettingManager.vi`](utilities/#settingmanagervi) コントロールのリロードボタンにショートカットキー F5 を割り当てた
   - [`GetControlValues.vi`](lib/SetGetControlValue#getcontrolvaluesvi) に `As List` オプションを追加した
+- 2023-10-17
+  - [`InsertMenubarItem.vi`](lib/UI/#insertmenubaritemvi) を追加した
