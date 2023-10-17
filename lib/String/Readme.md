@@ -2,7 +2,7 @@ Lib/String
 ==
 文字列を扱うユーティリティ VI 群
 
-- [JSON/](JSON/Readme.md)
+- [JSON/](JSON/)
   - JSON 関連の一連のライブラリが格納されている
 - AssertSubTexts.vi
   - 文字列の指定位置に候補文字列のうちどれかが現れることを確認する
