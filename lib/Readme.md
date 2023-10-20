@@ -11,6 +11,7 @@ Lib/
 --
 
 - [`File/`](File/) ファイル関連
+- [`Hardware/`](Hardware/) ハードウェア関連
 - [`SetGetControlValue/`](SetGetControlValue/) コントロール値の読み書きを行う
 - [`String/`](String/) 文字列関連、JSON 関連
 - [`UI/`](UI/) UI関連

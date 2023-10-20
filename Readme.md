@@ -116,3 +116,7 @@ LabVIEW メタプログラミングの勧め
   - [`InsertMenubarItem.vi`](lib/UI/#insertmenubaritemvi) を追加した
 - 2023-10-20
   - [`GetControlValue.vi`](lib/SetGetControlValue#getcontrolvaluevi), [`SetControlValue.vi`](lib/SetGetControlValue#setcontrolvaluevi) に `control ref` 端子を追加し、アクセスするコントロールを直接指定できるようにした。
+- 2023-10-21
+  - [lib/Hardware](lib/Hardware) に以下の２つを追加した
+    - `ParamClusterControl.vi` ハードウェアの設定をテキストコマンドで読み書きするプログラムを作成するのに用いる
+    - `SerialPortSetup.vi` シリアルポートの設定を行う UI を提供する
