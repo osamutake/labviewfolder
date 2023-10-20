@@ -114,3 +114,5 @@ LabVIEW メタプログラミングの勧め
   - [`GetControlValues.vi`](lib/SetGetControlValue#getcontrolvaluesvi) に `As List` オプションを追加した
 - 2023-10-17
   - [`InsertMenubarItem.vi`](lib/UI/#insertmenubaritemvi) を追加した
+- 2023-10-20
+  - [`GetControlValue.vi`](lib/SetGetControlValue#getcontrolvaluevi), [`SetControlValue.vi`](lib/SetGetControlValue#setcontrolvaluevi) に `control ref` 端子を追加し、アクセスするコントロールを直接指定できるようにした。

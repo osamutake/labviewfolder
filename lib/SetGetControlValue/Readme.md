@@ -234,6 +234,10 @@ JSON には大雑把にプリミティブデータ、配列、オブジェクト
 
 ### SetControlValue.vi
 
+- JSON 文字列で表した値をコントロールに代入するための VI。
+- どのコントロールに代入するかを指定するにはアプリケーション、VI、コントロールを文字列で指定するか、あるいはそれぞれ対応するリファレンスを指定する
+- 値の代入時に `Value Change` イベントを発生させるかどうかを `Signaling` で選べる
+
 ![](image4md/pins-SetControlValue.png)
 
 - `vi`: VI 名を文字列で与える　[詳細についてはこちらを参照](#vi名の指定)
@@ -249,10 +253,19 @@ JSON には大雑把にプリミティブデータ、配列、オブジェクト
 - `vi ref` : VI 名を文字列で与えるのではなく直接 VI のリファレンスを指定するときにここに接続する
   - ここに接続されると `vi` 端子や `application reference (local)` 端子は無視される
   - １つの VI に対して多くのコントロールを書き換えるのであれば何度も VI 名を検索するのは無駄になるのでこの端子を使うと良い
-  - VI 名から VI ref を得るには [VINameToVI.vi](#vinametovivi) を使うと良い
+  - VI 名から `VI ref` を得るには [VINameToVI.vi](#vinametovivi) を使うと良い
+  - 自分自身の `VI ref` を得るには `Application Control` パレットの `VI Server Reference` をドロップすればよい。`This VI` のリファレンスが得られる（下図参照）。
+- `control ref` : 値を設定するコントロールのリファレンスを入れる
+  - ここに値が接続されると `vi`, `ctrl`, `application reference`, `vi ref` は無視される
 - `Signaling` : 通常コントロールの値が変更されると「値変更イベント」が発生するが、この端子に `false` を指定するとイベントを発生しないで値を書き換えられる
 
+![](image4md/ReferenceOfThisVI.png) → ![](image4md/ReferenceOfThisVI2.png)
+
 ### GetControlValue.vi
+
+- 指定したコントロールの値を JSON 文字列として得るための VI。
+- どのコントロールの値を得るかを指定するにはアプリケーション、VI、コントロールを文字列で指定するか、あるいはそれぞれ対応するリファレンスを指定する
+- `Enum` や `Ring` の値を数値として得るか、対応する文字列として得るかを `UseEnum` で選べる
 
 ![](image4md/pins-GetControlValue.png)
 
@@ -266,6 +279,9 @@ JSON には大雑把にプリミティブデータ、配列、オブジェクト
   - ここに接続されると `vi` 端子や `application reference (local)` 端子は無視される
   - １つの VI に対して多くのコントロールを書き換えるのであれば何度も VI 名を検索するのは無駄になるのでこの端子を使うと良い
   - VI 名から VI ref を得るには [VINameToVI.vi](#vinametovivi) を使うと良い
+  - 自分自身の `VI ref` を得るには `Application Control` パレットの `VI Server Reference` をドロップすればよい。`This VI` のリファレンスが得られる（上図参照）。
+- `control ref` : 値を得たいコントロールのリファレンスを入れる
+  - ここに値が入力されれば `app`, `ctrl`, `application reference`, `vi ref` は無視される
 - `UseEnum (true)` : `Enum` や `Ring` コントロールの値を文字列ではなく数値として得たい場合には `false` を指定する
 - `String out` : コントロールの値を JSON 形式の文字列で得る　[詳細についてはこちらを参照](#json形式での値の指定)
 - `Value` : コントロールの値を Variant 形式で得る
