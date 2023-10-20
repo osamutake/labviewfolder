@@ -6,6 +6,7 @@ utilities/
 - [utilities/](#utilities)
   - [ParameterSweeper.vi](#parametersweepervi)
   - [SettingManager.vi](#settingmanagervi)
+    - [TODO](#todo)
   - [WebAPI/](#webapi)
 
 ParameterSweeper.vi
@@ -62,6 +63,12 @@ SettingManager.vi
 - ドキュメントフォルダーの LabVIEW Data というフォルダに SettingManager.ini というファイルができていて、ここにすべての設定が保存される
   - Windows なら `C:\Users\(ユーザー名)\Documents\LabVIEW Data\SettingManager.ini`
   - 誤って消してしまったり上書きしてしまったりした場合に備えて常に１０個ほど履歴を残しているが、長期的に保存したければこのファイルを定期的にバックアップしておくと良い
+
+### TODO
+
+- 設定を入れ子にした際に、親設定のダブルクリックで個設定を順に実行する機能があると便利かもしれない
+  - アイコンで見分けられるようにする
+- メモリ上にない VI をロードする際に確認を求めないオプションを設定ごとに持たせたい
 
 WebAPI/
 --
