@@ -120,3 +120,5 @@ LabVIEW メタプログラミングの勧め
   - [lib/Hardware](lib/Hardware) に以下の２つを追加した
     - `ParamClusterControl.vi` ハードウェアの設定をテキストコマンドで読み書きするプログラムを作成するのに用いる
     - `SerialPortSetup.vi` シリアルポートの設定を行う UI を提供する
+- 2023-10-23
+    - 複数の `ParamClusterControlCore.vi` クローンで `IO Queue` を共有できるようにし、その使用例を追加した `example2-ParamClusterControlCore.vi`

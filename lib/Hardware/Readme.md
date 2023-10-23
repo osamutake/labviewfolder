@@ -81,12 +81,36 @@ ParamClusterControl.vi
   - コマンドは次の２つのどちらか
   - `UpdateCluster` : ハードウェアから値を読み取って `Cluster` を更新する
   - `ClusterChanged` : `Cluster` の変更された項目をハードウェアに書き込む
-- `IO queue` : VI から呼び出し元へデータ通信要求を送るための Queue
+- `IO queue in` : VI から呼び出し元へデータ通信要求を送るための Queue
+  - 指定しなければ内部で作成される
   - 送られる構造体のメンバー
   - `Operation` : `read` / `write` のどちらか（ハードウェアからの読取・ハードウェアへの書込）
   - `Data` : `SetGetCommands` で指定したコマンド文字列（`printf` プレースホルダは代入済み）
   - `Queue` : 結果を送り返すための `Queue`
+- `IO queue out` : VI から呼び出し元へデータ通信要求を送るための Queue
+  - `IO queue in` に指定した値あるいは内部で作成された値が出力される
 - 詳しい使い方は上記の例を参照のこと
+
+複数の Cluster を制御する例： [image4md/example2-ParamClusterControl.vi](image4md/example2-ParamClusterControl.vi)
+
+![](image4md/example2-ParamClusterControl.png)
+
+- VI 上にはパラメータを含むクラスターが２つある
+- ここでは実際の通信は行わず仮想の通信ログを String 表示器に表示する
+
+![](image4md/example2-ParamClusterControl2.png)
+
+- `ParamClusterControl.vi` をクラスタの個数だけ別途呼び出す
+- その際、同じ機器のパラメータであれば `IO Queue` は共通にしておくと通信部分を共有できる
+  - 1つ目の `ParamClusterControl.vi` の `IO Queue in` に無効な `Queue` リファレンスを渡すと新たな `IO Queue` が作成されて `IO Queue out` に出てくる
+  - 2つ目の `ParamClusterControl.vi` の `IO Queue in` にをの `Queue` リファレンスを渡せば同じ `IO Queue` に対して通信要求が送られることになる
+- 両者とも初期化のため `Command Queue` に `UpdateCluster` を入れておく
+- `Cluster` および `Cluster 2` の `Value Change` イベントでそれぞれ対応する `Command Queue` に `ClusterChanged` コマンドを送る
+- `IO Queue` の出口を監視して、通信要求に応じて機器と通信し、結果を要求に含まれる `Queue` に返す
+  - 値を返す際にはどちらから送られた通信要求かを気にせず、渡された `Queue` に返せば正しい送り先に届く
+  - この例では実際には通信を行わず、読み出しなら `r:` を、書き込みなら `w:` を付けて仮想通信ログに書き加えている
+  - 読み取られる値は常に `0.3` になっている
+
 
 ### 技術メモ：Queue を介してメッセージを投げ合う VI の動作について
 
