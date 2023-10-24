@@ -163,3 +163,14 @@ LabVIEW メタプログラミングの勧め
   - `CoerseNumericType.vi` の `Fixed Point` 値の扱いを改善した
   - それに合わせて `lib/Variant` のドキュメントを拡充した
   - `ControlValueToJSON.vi` のドキュメントを追加した
+- 2023-10-25
+  - `SettingManager.vi` の改造
+    - `Read From INI` で `Encode` をしくじっていたのを直した
+    - 設定にオプションを追加した
+      - VI ロードの確認なし
+      - VI の自動実行
+      - サブ設定の自動実行
+      - 実行後のウェイト
+    - メッセージ処理を見直して `Reload` が複数回呼ばれる問題を解消
+    - `Update Modified State` で `DeferPanelUpdate` を効かせた
+  
