@@ -19,6 +19,7 @@ Lib/SetGetControlValue
     - [GetControlValue.vi](#getcontrolvaluevi)
     - [SetControlValues.vi](#setcontrolvaluesvi)
     - [GetControlValues.vi](#getcontrolvaluesvi)
+    - [ControlValueToJSON.vi](#controlvaluetojsonvi)
     - [VINameToVI.vi](#vinametovivi)
   - [技術的な話](#技術的な話)
 
@@ -336,6 +337,18 @@ JSON には大雑把にプリミティブデータ、配列、オブジェクト
   - `As List` が `true` ならそのまま `SetControlValues.vi` に渡せる文字列として得られる
     - 後にコントロールへ書き戻すのであればこちらが便利
     - `As List` が `true` のとき、指定された「表示名」は無視される
+
+### ControlValueToJSON.vi
+
+このライブラリ内ではコントロール値を `JSON` 文字列に直すのに使われているが、どんな値でも `JSON` に直せる汎用の `JSON` エンコーダーとして単体でも使える。数値の配列を突っ込んで全体を文字列化したり、クラスターの値を突っ込んで全体を文字列化したり。
+
+![](image4md/pins-ControlValueToJSON.png)
+
+- `Value` : 変換したい値を入れる（`Variant` 端子なので大抵の値を直接繋げられる）
+- `Control in` : 汎用 `JSON` エンコーダーとして使うなら何も繋がなくていい
+  - `Ring` 値を文字列表現できなくなるけれで目をつぶって
+- `UseEnum` : `Enum` 値を文字列ではなく数値でエンコードしたければ `false` を入力する
+- `String` : `JSON` 化された値が出力される
 
 ### VINameToVI.vi
 

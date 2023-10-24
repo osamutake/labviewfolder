@@ -22,6 +22,7 @@
     - `GetControlValue.vi` : 名前を指定してコントロールの値を読み出す
     - `SetControlValues.vi` : リストで与えたコントローにの値を一度に書き込む
     - `GetControlValues.vi` : リストで与えたコントロールの値を一度に読み出す
+    - `ControlValueToJSON.vi` : 任意の値を JSON 文字列にエンコードする
     - `VINameToVI.vi` : VI 名からリファレンスを得る (別アプリやリモートも対応)
   - [`lib/String/`](lib/String) 文字列関連
     - [`lib/String/JSON/`](lib/String/JSON) JSON 関連
@@ -161,3 +162,4 @@ LabVIEW メタプログラミングの勧め
 - 2023-10-24
   - `CoerseNumericType.vi` の `Fixed Point` 値の扱いを改善した
   - それに合わせて `lib/Variant` のドキュメントを拡充した
+  - `ControlValueToJSON.vi` のドキュメントを追加した
