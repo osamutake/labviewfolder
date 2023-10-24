@@ -157,4 +157,7 @@ LabVIEW メタプログラミングの勧め
     - `ParamClusterControl.vi` ハードウェアの設定をテキストコマンドで読み書きするプログラムを作成するのに用いる
     - `SerialPortSetup.vi` シリアルポートの設定を行う UI を提供する
 - 2023-10-23
-    - 複数の `ParamClusterControlCore.vi` クローンで `IO Queue` を共有できるようにし、その使用例を追加した `example2-ParamClusterControlCore.vi`
+  - 複数の `ParamClusterControlCore.vi` クローンで `IO Queue` を共有できるようにし、その使用例を追加した `example2-ParamClusterControlCore.vi`
+- 2023-10-24
+  - `CoerseNumericType.vi` の `Fixed Point` 値の扱いを改善した
+  - それに合わせて `lib/Variant` のドキュメントを拡充した
