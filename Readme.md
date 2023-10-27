@@ -15,7 +15,7 @@
   - [`lib/File/`](lib/File) ファイル関連
     - `FileMultipleBackup.vi` : 複数世代にわたるバックアップファイルを管理
     - `SequentialFileName.vi` : 連番付きファイル名の番号を1増やす
-  - [`lib/Hardware/`](lib/Hardware) ハードウェア関
+  - [`lib/Hardware/`](lib/Hardware) ハードウェア関連
     - `TextControlledInstrum` : テキストコマンドで読取・設定可能なハードウェアを制御する
     - `SerialPortSetup.vi` : シリアルポートの設定を行う
   - [`lib/SetGetControlValue/`](lib/SetGetControlValue) コントロール値の読み書きを行う
@@ -61,6 +61,13 @@ https://github.com/osamutake/labviewfolder
   - [ライセンス](#ライセンス)
   - [LabVIEW メタプログラミングの勧め](#labview-メタプログラミングの勧め)
   - [改訂履歴](#改訂履歴)
+
+古い LabView 用に保存したバージョンも用意しました
+
+- LabView 19 用ブランチ https://github.com/osamutake/labviewfolder/tree/labview19
+- LabView 20 用ブランチ https://github.com/osamutake/labviewfolder/tree/labview20
+
+最新版のコードが適宜取り込まれます
 
 ライセンス
 --
