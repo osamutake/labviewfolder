@@ -8,6 +8,7 @@ hardware/
   - [DACSinglePoint.vi = DAC の電圧値を制御するアプリ](#dacsinglepointvi--dac-の電圧値を制御するアプリ)
   - [SignalRecovery7280Lock-inAmp.vi](#signalrecovery7280lock-inampvi)
     - [このプログラム実装の技術的なポイント](#このプログラム実装の技術的なポイント)
+  - [TectronixDPO4000OscilloScope.vi](#tectronixdpo4000oscilloscopevi)
 
 
 ADCDataRecorder.vi = ADC の電圧値を記録するアプリ
@@ -142,3 +143,13 @@ Signal Recovery 製のロックインアンプ 7280 を制御するプログラ�
     - 更新が必要なものだけを `Case` ストラクチャで処理する
     - `ValueMap` を使うとコントロール名から値を得られるので適切な型に直して用いる
     - コントロールの `Value` プロパティへ代入することでコントロールの値を更新する
+
+TectronixDPO4000OscilloScope.vi
+--
+
+手持ちの DPO4054 のために作成した。
+
+背面の LAN ケーブルで接続して使うことを想定している。
+
+![](image4md/panel-DPO4000.png)
+

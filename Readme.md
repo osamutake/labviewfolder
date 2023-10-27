@@ -10,7 +10,8 @@
 - [`hardware/`](hardware/) ハードウェア関連ライブラリ
   - `ADCDataRecorder.vi` : ADC 入力を一定サンプリングレートで記録、ディスクへ保存する
   - `DACSinglePoint.vi` : DAC 出力値を変更する
-  - `SignalRecovery7280Lock-inAmp.vi` : ロックインアンプ 7280 の設定を行う
+  - `SignalRecovery7280Lock-inAmp.vi` : ロックインアンプ 7280 の設定を行う（シリアル接続）
+  - `TectronixDPO4000OscilloScope.vi` : オシロスコープ DPO4000 シリーズの制御を行う（LAN 接続）
 - [`lib/`](lib/) 汎用のサブ VI ライブラリ
   - [`lib/File/`](lib/File) ファイル関連
     - `FileMultipleBackup.vi` : 複数世代にわたるバックアップファイルを管理
@@ -183,5 +184,6 @@ LabVIEW メタプログラミングの勧め
     - `Update Modified State` で `DeferPanelUpdate` を効かせた
 - 2023-10-27
   - `lib/Hardware/ParamClusterControl.vi` を削除して、代わりに `lib/Hsardware/TextControlledInstrum` ライブラリを作成した
-    - １つのクラスタを制御するだけでなく、クラスタを含む複数のコントロールの制御がより簡単に行えるようになった
+    - １つのクラスタを制御するだけでなく、クラスタを含む多数のコントロールを簡単に制御できるようになった
   - 同ライブラリを使って `hardware/SignalRecovery7280Lock-inAmp.vi` を作成した
+  - 銅ライブラリを使って `hardware/TectronixDPO4000OscilloScope.vi` を作成した
