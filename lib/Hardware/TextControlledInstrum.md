@@ -8,7 +8,7 @@ lib/Hardware/TextControlledInstrum
   - [目次](#目次)
   - [概要](#概要)
   - [使用例１：](#使用例１)
-  - [TextControlledInstrumControlsToArray.vi](#textcontrolledinstrumcontrolstoarrayvi)
+  - [TextControlledInstrumControlToCommand.vi](#textcontrolledinstrumcontroltocommandvi)
   - [TextControlledInstrumUpdateControls.vi](#textcontrolledinstrumupdatecontrolsvi)
   - [TextControlledInstrumControlChanged.vi](#textcontrolledinstrumcontrolchangedvi)
   - [TextControlledInstrumIOQueuePacket.ctl](#textcontrolledinstrumioqueuepacketctl)
@@ -51,7 +51,7 @@ lib/Hardware/TextControlledInstrum
 
 これを作るのに主に使用されるのは次の３つの VI と１つの構造体になります
 
-- `CommandsToArray.vi` : (本名は `TextControlledInstrumCommandsToArray.vi`)
+- `ControlToCommand.vi` : (本名は `TextControlledInstrumControlToCommand.vi`)
   - コントロールリファレンスとコマンドのリストを受け取って事前準備を行う
 - `UpdateControls.vi` : (本名は `TextControlledInstrumUpdateControls.vi`)
   - 機器からパラメータを読みだしてすべてのコントロールの値を更新する
@@ -76,8 +76,8 @@ lib/Hardware/TextControlledInstrum
     - `Queue` は文字列を入れて返信するための `Queue` リファレンス
       - `read` ではここに機器から読み取った文字情報を返す
       - `write` では設定完了を通知するため何でも良いので文字列を返す
-- 始めにコントロールとコマンドのリストを渡して `CommandsToArray.vi` が呼び出される
-  - 機器のパラメータに対応付するコントロールを、単体あるいは配列として入力する
+- 始めにコントロールとコマンドのリストを渡して `ControlToCommand.vi` が呼び出される
+  - 機器のパラメータに対応付するコントロールを単体あるいは配列として入力する
   - コマンドリストは、それぞれのパラメータを設定・読取するためのテキストコマンドを列挙した文字列を入力する
     - 書き込みコマンド、読み出しコマンド、`scanf` テンプレート からなる３行を、設定項目の数だけ繰り返す
     - 設定項目の記述順はコントロールリストの順番に合わせる
@@ -101,7 +101,7 @@ lib/Hardware/TextControlledInstrum
         - 例えば `off|on` なら `off` が返ってきた時に `false`、`on` が返ってきた時に `true` と解釈される
         - これらの前に `%s` を含む `scanf` テンプレートを `|` で区切って記述すれば `%s` で得られた文字列に対して続く真偽文字列との比較が行われる
     - これらのコマンド文字列は直接シリアルポート等へ出力されるわけではなく後述する `IO Queue` へメッセージとして送られる
-  - `CommandsToArray.vi` の出力として `Command Array` にコマンド配列が、`Control to Index` にコントロールリファレンスからコマンド配列の対応位置を求めるための Map が出力されるので、これらを `UpdateControls.vi` や `ControlChanged.vi` に接続する
+  - `ControlToCommand.vi` の出力として `ControlToCommand` にコントロールリファレンスからコマンド配列を得るための Map が出力されるので、これらを `UpdateControls.vi` や `ControlChanged.vi` に接続する
 
 （再掲)
 
@@ -136,24 +136,24 @@ lib/Hardware/TextControlledInstrum
       - 書き込み完了時に `ok` などの文字列を１行返すハードウェアならば、書き込み後も１行読み取ってその値を返せばよいので、読み取りと書き込みとを `case` ストラクチャで分ける必要がなくなる
   - `ControlChanged.vi` はこの返信を待ってから次の動作へ進む
 
-始めに `CommandsToArray.vi` へ渡す設定・読取コマンドリストはあくまで `UpdateControls.vi` や `ControlChanged.vi` が `IO Queue` へ入れる文字列を決めるためのものなので、`IO Queue` を処理する送受信ループで `Data` の内容をそのままハードウェアへ送る必要はない。
+始めに `ControlToCommand.vi` へ渡す設定・読取コマンドリストはあくまで `UpdateControls.vi` や `ControlChanged.vi` が `IO Queue` へ送る文字列を決めるためのものなので、必ずしも `IO Queue` を処理する送受信ループで `Data` の内容をそのままハードウェアへ送る必要はない。
 
-標準の機能では対応しきれないような特殊な処理が必要となるような項目については、それが分かるような文字列をコマンドリストに与えておき、`IO Queue` から読み出した文字列を見て特殊処理が必要な場合のみを別処理にするような使い方をしても構わない。
+標準の機能では対応しきれないような特殊な処理が必要となるような項目については、それが分かるような文字列をコマンドリストに与えておき、`IO Queue` から読み出した文字列を見て特殊処理が必要な場合のみを別に処理するような使い方をしても構わない。
 
 `UpdateControls.vi` と `ControlChanged.vi` では対応できないようなやり取りが必要な場合には、その処理も `IO Queue` を用いて行うべきである。逆に、`IO Queue` を使うだけでは実現できない処理（例えばハードウェア側から不定期にデータが届くような使い方？）とこの VI とは両立して使うことが難しい。
 
 `IO Queue` を簡便に利用するため、`WriteCommands.vi` と `ReadCommand.vi` が用意されている。
 
-TextControlledInstrumControlsToArray.vi
+TextControlledInstrumControlToCommand.vi
 --
 
 コントロールとコマンドのリストを与えて前処理を行う。
 
-![](image4md/pins-ControlsToArray.png)
+![](image4md/pins-ControlToCommand.png)
 
 - `Control Array` : ハードウェア機器のパラメータに対応付けるコントロールのリファレンスの配列を与える
-  - 配列ではなく単体を与えても動作する
-- `SetGetCommand` : パラメータの書き込みコマンド・読み出しコマンド・読みだした値を解釈するための `scanf` テンプレートの３行をコントロールの数だけ繰り返した文字列を与える
+  - 配列ではなく単体を与えても動作する（その場合には `ControlToCommandSingle.vi` が配列に入れて再度呼び出す）
+- `SetGetCommands` : パラメータの書き込みコマンド・読み出しコマンド・読みだした値を解釈するための `scanf` テンプレートの３行をコントロールの数だけ繰り返した文字列を与える
   - クラスターコントロールについてはサブコントロールの分をすべて記述する
   - 書き込みコマンドにはコントロールの型に合わせた `printf` プレースホルダーを含める
     - `Boolean` 型だけは `(false時コマンド)|(true時コマンド)` のように `|` で区切って指定する
@@ -163,21 +163,20 @@ TextControlledInstrumControlsToArray.vi
   - 書き込みのみ、読み出しのみ、のパラメータについては対応する行を空行にすればよい
     - コントロールが表示器なら書き込みコマンドは必要ない
     - ボタンコントロールの機械動作を「押してる間だけ `true`」にして `true` の書き込みコマンドだけ記述すればボタン押下でコマンドを送信できる
-- `Command Array` : コマンド文字列がコントロール数×３列の２次元配列として出力される
-- `Control to Index` : コントロールリファレンスからコマンド配列インデックスを求めるマップが出力される
+- `ControlToCommand` : コントロールリファレンスからコマンド配列（書き込みコマンド、読み出しコマンド、`scanf` テンプレートの３要素を持つ）を求めるマップが出力される
 - 出力値の意味は深く考えず、そのまま `UpdateControls.vi` や `ControlChanged.vi` に繋げばよい
 - 詳しい使い方は使用例１、使用例２を参照のこと
 
 TextControlledInstrumUpdateControls.vi
 --
 
-すべてのコントロールについて機器から値を読み出して更新する。
+すべてのパラメータについて機器から値を読み出し画面上のコントロールを更新する。
 
 ![](image4md/pins-UpdateControls.png)
 
-- `Control to Index` : `ControlsToArray.vi` からの出力を繋ぐ
-- `Control Array` : `ControlsToArray.vi` からの出力を繋ぐ
+- `ControlToCommand` : `ControlsToArray.vi` からの出力を繋ぐ
 - `timeout` : `IO Queue` へ送受信要求を送ってから返信までのタイムアウト
+- `timed out?` : タイムアウトがあれば `true` になる
 - `IO Queue` : 送受信要求を送る `Queue` を指定する
 
 TextControlledInstrumControlChanged.vi
@@ -201,8 +200,7 @@ TextControlledInstrumControlChanged.vi
 - `CtrRef` : イベントハンドラからの値をそのまま繋ぐ
 - `OldVal` : イベントハンドラからの値をそのまま繋ぐ
 - `NewVal` : イベントハンドラからの値をそのまま繋ぐ
-- `Control to Index` : `ControlsToArray.vi` からの出力を繋ぐ
-- `Control Array` : `ControlsToArray.vi` からの出力を繋ぐ
+- `ControlToCommand` : `ControlsToArray.vi` からの出力を繋ぐ
 - `timeout` : `IO Queue` へ送受信要求を送ってから返信までのタイムアウト
 - `IO Queue` : 送受信要求を送る `Queue` を指定する
 - `timed out?` : タイムアウトがあったかどうかを返す
