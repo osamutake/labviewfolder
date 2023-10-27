@@ -14,6 +14,7 @@ lib/Hardware/TextControlledInstrum
   - [TextControlledInstrumIOQueuePacket.ctl](#textcontrolledinstrumioqueuepacketctl)
   - [TextControlledInstrumWriteCommands.vi](#textcontrolledinstrumwritecommandsvi)
   - [TextControlledInstrumReadCommand.vi](#textcontrolledinstrumreadcommandvi)
+  - [TextControlledInstrumMakeControlMap.ctl](#textcontrolledinstrummakecontrolmapctl)
   - [使用例２: `SignalRecovery7280Lock-inAmp.vi`](#使用例２-signalrecovery7280lock-inampvi)
 
 概要
@@ -65,8 +66,8 @@ lib/Hardware/TextControlledInstrum
 ![](image4md/example-TextControlledInstrum2.png)
 
 - 全体構造の説明
-  - 定期的に機器からパラメータを読み取ってコントロールの値を更新するためにイベントループの `Timeout` イベントで `UpdateControls.vi` を読ぶ
-  - ユーザーによりコントロールの値が変更されたら機器に値を送るためにイベントループの `Value Change` イベントで `ControlChanged.vi` を読ぶ
+  - 定期的に機器からパラメータを読み取ってコントロールの値を更新するためにイベントループの `Timeout` イベントで `UpdateControls.vi` を呼ぶ
+  - ユーザーによりコントロールの値が変更されたら機器に値を送るためにイベントループの `Value Change` イベントで `ControlChanged.vi` を呼ぶ
   - これらの VI はパラメータの読み書きに必要なコマンドの送受信要求を `IO Queue` へ送る
   - 送られた送受信要求に応えるため送受信ループ内で `IO Queue` からパケットが読みだされて処理される
   - `IO Queue` に送られる `IO Queue Packet` 構造体は次の要素を含む
@@ -204,6 +205,8 @@ TextControlledInstrumControlChanged.vi
 - `Control Array` : `ControlsToArray.vi` からの出力を繋ぐ
 - `timeout` : `IO Queue` へ送受信要求を送ってから返信までのタイムアウト
 - `IO Queue` : 送受信要求を送る `Queue` を指定する
+- `timed out?` : タイムアウトがあったかどうかを返す
+  - この値を読むとすべての処理が終わったことを検出できるので、パラメータ項目の更新が終わったタイミングで別処理、例えばパラメータに従属する表示器の計算などを行いたければそこでするとよい
 
 
 TextControlledInstrumIOQueuePacket.ctl
@@ -260,6 +263,35 @@ TextControlledInstrumReadCommand.vi
 - `timed out?` : タイムアウトがあったかどうか
 
 `TextControlledInstrumUpdateControlsSub.vi` の中でも使われている
+
+TextControlledInstrumMakeControlMap.ctl
+--
+
+コントロールリファレンスの配列を与えると以下を出力する
+
+- `Controls` : 子コントロールを含めたコントロールリファレンスの配列
+- `Names` : 対応するコントロール名（`Cluster/SubControl` のようにフルパス表示になる）
+- `ControlMap out` : フルパス表示のコントロール名からコントロールリファレンスを得る Map
+- `Valuemap out` : フルパス表示のコントロール名からコントロール値を得る Map
+
+![](image4md/pins-MakeControlMap.png)
+
+コントロールの一覧を取れたり、値を読んだりできるので、こういう使い方ができる
+
+![](image4md/example-MakeControlMap.png)
+
+- `UpdateControls` でパラメータ項目の値を最新に更新した後、それらの値に従属して変化する表示器の値を更新する
+- この例ではパラメータ項目に対応するコントロールのリストに従属表示器も加えたリストを `MakeControlMap` に与えている
+- `Names` と `Controls` で `For` ループを回すとすべてのコントロールに対して処理を行える
+- 更新したいコントロール名で `Case` 文で分岐して、対応する計算をした後、コントロールリファレンスを使って値を更新する（`Value` プロパティへの代入）
+- 計算に使う値は他のコントロールから取ってることになる
+- ローカル変数を作ってそこから値を得ても良いが、それだと計算をサブVI化できなくなる
+- `ValueMap` にコントロール名をフルパス表示で与えれば最新の値が得られるので、それを適切な型に直すことでローカル変数を使わない書き方ができる
+- 図の `X Scaled` の例では `X` というコントロールの値と `Scale` というコントロールの値を掛けたものを `X Scaled` に代入している
+
+逆に、パラメータ項目に結び付けられていないコントロールが変更された際にその値をパラメータに反映するには、そのコントロールの `ValueChanged` イベントで従属パラメータの `Value (Signaling)` プロパティに代入すればよい。
+
+パラメータコントロールの `Value Change` イベントが走って装置へ値が送られることになる。
 
 使用例２: `SignalRecovery7280Lock-inAmp.vi`
 --
