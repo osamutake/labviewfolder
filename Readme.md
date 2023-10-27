@@ -10,12 +10,13 @@
 - [`hardware/`](hardware/) ハードウェア関連ライブラリ
   - `ADCDataRecorder.vi` : ADC 入力を一定サンプリングレートで記録、ディスクへ保存する
   - `DACSinglePoint.vi` : DAC 出力値を変更する
+  - `SignalRecovery7280Lock-inAmp.vi` : ロックインアンプ 7280 の設定を行う
 - [`lib/`](lib/) 汎用のサブ VI ライブラリ
   - [`lib/File/`](lib/File) ファイル関連
     - `FileMultipleBackup.vi` : 複数世代にわたるバックアップファイルを管理
     - `SequentialFileName.vi` : 連番付きファイル名の番号を1増やす
   - [`lib/Hardware/`](lib/Hardware) ハードウェア関
-    - `ParamClusterControl.vi` : テキストコマンドで読取・設定可能なハードウェア項目を制御する
+    - `TextControlledInstrum` : テキストコマンドで読取・設定可能なハードウェアを制御する
     - `SerialPortSetup.vi` : シリアルポートの設定を行う
   - [`lib/SetGetControlValue/`](lib/SetGetControlValue) コントロール値の読み書きを行う
     - `SetControlValue.vi` : 名前を指定してコントロールに値を書き込む
@@ -173,4 +174,7 @@ LabVIEW メタプログラミングの勧め
       - 実行後のウェイト
     - メッセージ処理を見直して `Reload` が複数回呼ばれる問題を解消
     - `Update Modified State` で `DeferPanelUpdate` を効かせた
-  
+- 2023-10-27
+  - `lib/Hardware/ParamClusterControl.vi` を削除して、代わりに `lib/Hsardware/TextControlledInstrum` ライブラリを作成した
+    - １つのクラスタを制御するだけでなく、クラスタを含む複数のコントロールの制御がより簡単に行えるようになった
+  - 同ライブラリを使って `hardware/SignalRecovery7280Lock-inAmp.vi` を作成した
