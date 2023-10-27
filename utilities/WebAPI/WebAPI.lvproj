@@ -451,6 +451,7 @@
 			<Item Name="TextControlledInstrumControlChangedSub.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrum/TextControlledInstrumControlChangedSub.vi"/>
 			<Item Name="TextControlledInstrumControlToCommands.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrum/TextControlledInstrumControlToCommands.vi"/>
 			<Item Name="TextControlledInstrumIOQueuePacket.ctl" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumIOQueuePacket.ctl"/>
+			<Item Name="TextControlledInstrumMakeControlMap.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumMakeControlMap.vi"/>
 			<Item Name="TextControlledInstrumReadCommand.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumReadCommand.vi"/>
 			<Item Name="TextControlledInstrumUpdateControls.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumUpdateControls.vi"/>
 			<Item Name="TextControlledInstrumUpdateControlsSub.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrum/TextControlledInstrumUpdateControlsSub.vi"/>
