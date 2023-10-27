@@ -14,6 +14,22 @@
 		<Property Name="server.viscripting.showScriptingOperationsInContextHelp" Type="Bool">false</Property>
 		<Property Name="server.viscripting.showScriptingOperationsInEditor" Type="Bool">false</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
+		<Item Name="for conversion" Type="Folder">
+			<Item Name="example-DeferePanelUpdate.vi" Type="VI" URL="../../../lib/UI/image4md/example-DeferePanelUpdate.vi"/>
+			<Item Name="example-InsertMenubarItem.vi" Type="VI" URL="../../../lib/UI/image4md/example-InsertMenubarItem.vi"/>
+			<Item Name="example-RaiseErrorIf.vi" Type="VI" URL="../../../lib/image4md/example-RaiseErrorIf.vi"/>
+			<Item Name="example-SequentialFileName.vi" Type="VI" URL="../../../lib/File/example/example-SequentialFileName.vi"/>
+			<Item Name="example-SetGetControlValue.vi" Type="VI" URL="../../../lib/SetGetControlValue/image4md/example-SetGetControlValue.vi"/>
+			<Item Name="example-TextControlledInstrum.vi" Type="VI" URL="../../../lib/Hardware/image4md/example-TextControlledInstrum.vi"/>
+			<Item Name="example-VariantArrayAccess.vi" Type="VI" URL="../../../lib/Variant/image4md/example-VariantArrayAccess.vi"/>
+			<Item Name="example-VariantClusterAccessMulti.vi" Type="VI" URL="../../../lib/Variant/image4md/example-VariantClusterAccessMulti.vi"/>
+			<Item Name="example-VINameToVI.vi" Type="VI" URL="../../../lib/SetGetControlValue/image4md/example-VINameToVI.vi"/>
+			<Item Name="experiment-CoerseNumericType.vi" Type="VI" URL="../../../lib/Variant/image4md/experiment-CoerseNumericType.vi"/>
+			<Item Name="StandardMethodsForSetGetControlValues.vi" Type="VI" URL="../../../lib/SetGetControlValue/image4md/StandardMethodsForSetGetControlValues.vi"/>
+			<Item Name="test-CoerseNumericTypeFixedPoint.vi" Type="VI" URL="../../../lib/Variant/test/test-CoerseNumericTypeFixedPoint.vi"/>
+			<Item Name="test-SetGetControlValueSub.vi" Type="VI" URL="../../../lib/SetGetControlValue/test/test-SetGetControlValueSub.vi"/>
+			<Item Name="test-SlippyInterval.vi" Type="VI" URL="../../ParameterSweeper/test/test-SlippyInterval.vi"/>
+		</Item>
 		<Item Name="test" Type="Folder">
 			<Item Name="test-runner" Type="Folder">
 				<Item Name="test-SequentialFileName.vi" Type="VI" URL="../../../lib/File/test/test-SequentialFileName.vi"/>
@@ -85,6 +101,7 @@
 		<Item Name="SetControlValueHTTP.vi" Type="VI" URL="../SetControlValueHTTP.vi"/>
 		<Item Name="SetControlValues.vi" Type="VI" URL="../../../lib/SetGetControlValue/SetControlValues.vi"/>
 		<Item Name="SettingManager.vi" Type="VI" URL="../../SettingManager.vi"/>
+		<Item Name="SignalRecovery7280Lock-inAmp.vi" Type="VI" URL="../../../hardware/SignalRecovery7280Lock-inAmp.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="1D String Array to Delimited String.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/1D String Array to Delimited String.vi"/>
@@ -316,6 +333,9 @@
 				<Item Name="Less.vim" Type="VI" URL="/&lt;vilib&gt;/Comparison/Less.vim"/>
 				<Item Name="Longest Line Length in Pixels.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Longest Line Length in Pixels.vi"/>
 				<Item Name="LVBoundsTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVBoundsTypeDef.ctl"/>
+				<Item Name="LVFixedPointRepBitsTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/fxp/LVFixedPointRepBitsTypeDef.ctl"/>
+				<Item Name="LVFixedPointRepRangeTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/fxp/LVFixedPointRepRangeTypeDef.ctl"/>
+				<Item Name="LVMenuShortCut.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVMenuShortCut.ctl"/>
 				<Item Name="LVNumericRepresentation.ctl" Type="VI" URL="/&lt;vilib&gt;/numeric/LVNumericRepresentation.ctl"/>
 				<Item Name="LVRectTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRectTypeDef.ctl"/>
 				<Item Name="NI_Data Type.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/Data Type/NI_Data Type.lvlib"/>
@@ -345,11 +365,15 @@
 				<Item Name="Three Button Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Three Button Dialog.vi"/>
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
 				<Item Name="Two-Way Comparison Versus Array Element.vim" Type="VI" URL="/&lt;vilib&gt;/Array/Helpers/Two-Way Comparison Versus Array Element.vim"/>
+				<Item Name="VISA Configure Serial Port" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port"/>
+				<Item Name="VISA Configure Serial Port (Instr).vi" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port (Instr).vi"/>
+				<Item Name="VISA Configure Serial Port (Serial Instr).vi" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port (Serial Instr).vi"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
 			<Item Name="AssertSubtexts.vi" Type="VI" URL="../../../lib/String/AssertSubtexts.vi"/>
 			<Item Name="ChildControlsInCluster.vi" Type="VI" URL="../../../lib/SetGetControlValue/ChildControlsInCluster.vi"/>
 			<Item Name="CoerseNumericType.vi" Type="VI" URL="../../../lib/Variant/CoerseNumericType.vi"/>
+			<Item Name="CoerseNumericTypeFixedPoint.vi" Type="VI" URL="../../../lib/Variant/CoerseNumericTypeFixedPoint.vi"/>
 			<Item Name="ControlNameEscape.vi" Type="VI" URL="../../../lib/SetGetControlValue/ControlNameEscape.vi"/>
 			<Item Name="ControlNameUnescape.vi" Type="VI" URL="../../../lib/SetGetControlValue/ControlNameUnescape.vi"/>
 			<Item Name="ControlValueArrayToJSON.vi" Type="VI" URL="../../../lib/SetGetControlValue/ControlValueArrayToJSON.vi"/>
@@ -378,6 +402,7 @@
 			<Item Name="FileMultipleBackup.vi" Type="VI" URL="../../../lib/File/FileMultipleBackup.vi"/>
 			<Item Name="FlattenPageSelecter.vi" Type="VI" URL="../../../lib/SetGetControlValue/FlattenPageSelecter.vi"/>
 			<Item Name="GetDisplayName.vi" Type="VI" URL="../../SettingManager/GetDisplayName.vi"/>
+			<Item Name="InsertMenubarItem.vi" Type="VI" URL="../../../lib/UI/InsertMenubarItem.vi"/>
 			<Item Name="JSONObjectToMap.vi" Type="VI" URL="../../../lib/String/JSON/JSONObjectToMap.vi"/>
 			<Item Name="JSONtoArrayValue.vi" Type="VI" URL="../../../lib/SetGetControlValue/JSONtoArrayValue.vi"/>
 			<Item Name="JSONtoControlValue.vi" Type="VI" URL="../../../lib/SetGetControlValue/JSONtoControlValue.vi"/>
@@ -394,23 +419,42 @@
 			<Item Name="RaiseErrorIf.vi" Type="VI" URL="../../../lib/RaiseErrorIf.vi"/>
 			<Item Name="SavedSettingsAppsAndVIs.vi" Type="VI" URL="../../SettingManager/SavedSettingsAppsAndVIs.vi"/>
 			<Item Name="SavedSettingsAsStringArray.vi" Type="VI" URL="../../SettingManager/SavedSettingsAsStringArray.vi"/>
+			<Item Name="SavedSettingsFilterDummy.vi" Type="VI" URL="../../SettingManager/SavedSettingsFilterDummy.vi"/>
 			<Item Name="SavedSettingsItemData.vi" Type="VI" URL="../../SettingManager/SavedSettingsItemData.vi"/>
 			<Item Name="SavedSettingsOpenAllVIs.vi" Type="VI" URL="../../SettingManager/SavedSettingsOpenAllVIs.vi"/>
+			<Item Name="SavedSettingsOptions.ctl" Type="VI" URL="../../SettingManager/SavedSettingsOptions.ctl"/>
 			<Item Name="SavedSettingsReadFromINI.vi" Type="VI" URL="../../SettingManager/SavedSettingsReadFromINI.vi"/>
 			<Item Name="SavedSettingsRemoveDuplication.vi" Type="VI" URL="../../SettingManager/SavedSettingsRemoveDuplication.vi"/>
 			<Item Name="SavedSettingsRestoreControlValues.vi" Type="VI" URL="../../SettingManager/SavedSettingsRestoreControlValues.vi"/>
 			<Item Name="SavedSettingsRestoreVIPosition.vi" Type="VI" URL="../../SettingManager/SavedSettingsRestoreVIPosition.vi"/>
+			<Item Name="SavedSettingsSetAllIcons.vi" Type="VI" URL="../../SettingManager/SavedSettingsSetAllIcons.vi"/>
+			<Item Name="SavedSettingsSetIcon.vi" Type="VI" URL="../../SettingManager/SavedSettingsSetIcon.vi"/>
 			<Item Name="SavedSettingsSetTitleOrDescription.vi" Type="VI" URL="../../SettingManager/SavedSettingsSetTitleOrDescription.vi"/>
+			<Item Name="SavedSettingsSplitDescription.vi" Type="VI" URL="../../SettingManager/SavedSettingsSplitDescription.vi"/>
 			<Item Name="SavedSettingsTitleAndDescription.vi" Type="VI" URL="../../SettingManager/SavedSettingsTitleAndDescription.vi"/>
 			<Item Name="SavedSettingsWriteToINI.vi" Type="VI" URL="../../SettingManager/SavedSettingsWriteToINI.vi"/>
 			<Item Name="SequentialFileName.vi" Type="VI" URL="../../../lib/File/SequentialFileName.vi"/>
-			<Item Name="SlippyInterval.vi" Type="VI" URL="../../SettingManager/SlippyInterval.vi"/>
+			<Item Name="SerialPortSetup.vi" Type="VI" URL="../../../lib/Hardware/SerialPortSetup.vi"/>
+			<Item Name="SettingManagerRestore.vi" Type="VI" URL="../../SettingManager/SettingManagerRestore.vi"/>
+			<Item Name="SettingManagerRunVI.vi" Type="VI" URL="../../SettingManager/SettingManagerRunVI.vi"/>
+			<Item Name="SlippyInterval.vi" Type="VI" URL="../../ParameterSweeper/SlippyInterval.vi"/>
 			<Item Name="SplitControlPath.vi" Type="VI" URL="../../../lib/SetGetControlValue/SplitControlPath.vi"/>
 			<Item Name="StringArrayIntersection.vi" Type="VI" URL="../../../lib/String/StringArrayIntersection.vi"/>
 			<Item Name="StringArrayToSet.vi" Type="VI" URL="../../../lib/String/StringArrayToSet.vi"/>
 			<Item Name="StringToComplexNumber.vi" Type="VI" URL="../../../lib/String/StringToComplexNumber.vi"/>
 			<Item Name="StringToJSON.vi" Type="VI" URL="../../../lib/String/JSON/StringToJSON.vi"/>
 			<Item Name="test-runnee.vi" Type="VI" URL="../../../test/test-runnee.vi"/>
+			<Item Name="TextControlledInstrumCommandsToArray.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumCommandsToArray.vi"/>
+			<Item Name="TextControlledInstrumCommandsToArrayMulti.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrum/TextControlledInstrumCommandsToArrayMulti.vi"/>
+			<Item Name="TextControlledInstrumCommandsToArraySingle.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrum/TextControlledInstrumCommandsToArraySingle.vi"/>
+			<Item Name="TextControlledInstrumControlChanged.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumControlChanged.vi"/>
+			<Item Name="TextControlledInstrumControlChangedSub.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrum/TextControlledInstrumControlChangedSub.vi"/>
+			<Item Name="TextControlledInstrumControlToCommands.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrum/TextControlledInstrumControlToCommands.vi"/>
+			<Item Name="TextControlledInstrumIOQueuePacket.ctl" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumIOQueuePacket.ctl"/>
+			<Item Name="TextControlledInstrumReadCommand.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumReadCommand.vi"/>
+			<Item Name="TextControlledInstrumUpdateControls.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumUpdateControls.vi"/>
+			<Item Name="TextControlledInstrumUpdateControlsSub.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrum/TextControlledInstrumUpdateControlsSub.vi"/>
+			<Item Name="TextControlledInstrumWriteCommands.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumWriteCommands.vi"/>
 			<Item Name="VariantArrayAccess.vi" Type="VI" URL="../../../lib/Variant/VariantArrayAccess.vi"/>
 			<Item Name="VariantArrayAccess1D.vi" Type="VI" URL="../../../lib/Variant/VariantArrayAccess1D.vi"/>
 			<Item Name="VariantArrayAccessMulti.vi" Type="VI" URL="../../../lib/Variant/VariantArrayAccessMulti.vi"/>
@@ -419,6 +463,7 @@
 			<Item Name="VariantClusterToArrayOfValues.vi" Type="VI" URL="../../../lib/Variant/VariantClusterToArrayOfValues.vi"/>
 			<Item Name="VINameToControls.vi" Type="VI" URL="../../../lib/SetGetControlValue/VINameToControls.vi"/>
 			<Item Name="VINameToVI.vi" Type="VI" URL="../../../lib/SetGetControlValue/VINameToVI.vi"/>
+			<Item Name="VISAWriteWithEchoback.vi" Type="VI" URL="../../../lib/Hardware/VISAWriteWithEchoback.vi"/>
 			<Item Name="ws_runtime.dll" Type="Document" URL="ws_runtime.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
