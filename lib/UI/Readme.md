@@ -7,6 +7,7 @@ UI 関連のライブラリ。
   - [提供される VI](#提供される-vi)
     - [DeferPanelUpdate.vi](#deferpanelupdatevi)
     - [InsertMenubarItem.vi](#insertmenubaritemvi)
+    - [LogToStringControl.vi](#logtostringcontrolvi)
 
 提供される VI
 --
@@ -59,3 +60,27 @@ VI の端子構成：
 - `Sub Item Tags` : サブ項目のタグのリスト
 - `Sub Item Names` : サブ項目の名前のリスト
   - 上の例のようにメニューのタグを名前に直すのに使えるよう出力されている
+
+### LogToStringControl.vi
+
+ログテキストを文字列コントロールに追加する。
+
+基本的な使い方としては `String Ref` と `Log Text` に値を入れるだけでよい。
+
+文字列コントロールの末尾に文字列が追加され、それが見えるようスクロールされる。
+
+ログが大きくなりすぎないよう定期的に古いログが削除される。
+
+![](image4md/panel-LogToStringControl.png)
+
+- `String Ref` : `String` コントロールのリファレンスを入れる
+- `Log Text` : ログとして記録したい文字列を入れる
+- `Prefix` : ログ文字列の前に追加したい文字を入れる（入れなければ無視される）
+- `Time Stamp` : `true` を入れると各行にタイムスタンプが入る。文字列を繋ぐと `Format Date/Time String` の `Time format` として解釈され、その形式でタイムスタンプが入る。
+- `Enable` : `false` を入れるとログ追加は行われない
+- `Clear` : `String` コントロールの内容を消去する。このとき `Log Text` に指定した文字列は無視される。
+- `String Ref out` : `String` コントロールのリファレンスがそのまま出力される
+- `Reduce Every` : ここに指定された回数だけログを追加したら `Reduce By` で指定された割合だけ古いログを削除する
+- `Reduce By` : `Reduce Every` 回のログ追加ごとに `Reduce By` で指定された割合だけ古いログを削除する
+  - デフォルトでは 100 回の追加ごとに古い方から２割のログを削除する
+
