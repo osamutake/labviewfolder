@@ -10,7 +10,9 @@
 - [`hardware/`](hardware/) ハードウェア関連ライブラリ
   - `ADCDataRecorder.vi` : ADC 入力を一定サンプリングレートで記録、ディスクへ保存する
   - `DACSinglePoint.vi` : DAC 出力値を変更する
-  - `SignalRecovery7280Lock-inAmp.vi` : ロックインアンプ 7280 の設定を行う
+  - `SignalRecovery7280Lock-inAmp.vi` : ロックインアンプ 7280 の設定を行う（シリアル接続）
+  - `StanfordSysResDG645DelayGenerator.vi` : ディレイジェネレータ DG645 の制御を行う（LAN 接続）
+  - `TectronixDPO4000OscilloScope.vi` : オシロスコープ DPO4000 シリーズの制御を行う（LAN 接続）
 - [`lib/`](lib/) 汎用のサブ VI ライブラリ
   - [`lib/File/`](lib/File) ファイル関連
     - `FileMultipleBackup.vi` : 複数世代にわたるバックアップファイルを管理
@@ -38,6 +40,7 @@
   - [`lib/UI/`](lib/UI) UI 関連
     - `DeferPanelUpdate.vi` : コントロールの値を変更する間 VI の表示更新を止める
     - `InsertMenubarItem.vi` : VI のメニューバーに新しい項目を追加する
+    - `LogToStringControl.vi` : ログテキストを文字列コントロールに追加する
   - [`lib/Variant/`](lib/Variant) `Variant` 関連
     - `CoerseNumericType.vi` : 数値を `Variant` で指定された型に変換する
     - `VariantArrayAccess.vi` : `Variant` に格納された配列の要素を読み書きする
@@ -183,5 +186,6 @@ LabVIEW メタプログラミングの勧め
     - `Update Modified State` で `DeferPanelUpdate` を効かせた
 - 2023-10-27
   - `lib/Hardware/ParamClusterControl.vi` を削除して、代わりに `lib/Hsardware/TextControlledInstrum` ライブラリを作成した
-    - １つのクラスタを制御するだけでなく、クラスタを含む複数のコントロールの制御がより簡単に行えるようになった
+    - １つのクラスタを制御するだけでなく、クラスタを含む多数のコントロールを簡単に制御できるようになった
   - 同ライブラリを使って `hardware/SignalRecovery7280Lock-inAmp.vi` を作成した
+  - 銅ライブラリを使って `hardware/TectronixDPO4000OscilloScope.vi` を作成した

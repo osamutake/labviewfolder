@@ -8,6 +8,8 @@ hardware/
   - [DACSinglePoint.vi = DAC の電圧値を制御するアプリ](#dacsinglepointvi--dac-の電圧値を制御するアプリ)
   - [SignalRecovery7280Lock-inAmp.vi](#signalrecovery7280lock-inampvi)
     - [このプログラム実装の技術的なポイント](#このプログラム実装の技術的なポイント)
+  - [TectronixDPO4000OscilloScope.vi](#tectronixdpo4000oscilloscopevi)
+  - [StanfordResSysDG645DelayGenerator.vi](#stanfordressysdg645delaygeneratorvi)
 
 
 ADCDataRecorder.vi = ADC の電圧値を記録するアプリ
@@ -108,9 +110,9 @@ Signal Recovery 製のロックインアンプ 7280 を制御するプログラ�
     - 自身のコマンド `Queue` に `"UpdateControls"` を入れてパラメータ値を機器から読みだす
   - 初期化に失敗すれば非表示 `Serial Port` 表示器は無効値のままになり通信は行われない
   - `SIGNAL RECOVERY 7280` ページから `Serial Port Setting` ページへのページ切替時にも非表示 `Serial Port` 表示器に無効値を入れている
-- コマンドリストは１つの文字列にしてしまうと長大になり見づらいため、区切りの良いところで区切って文字列配列として記述し `CommandsToArray.vi` に渡す前に `Concat` で繋げた
+- コマンドリストは１つの文字列にしてしまうと長大になり見づらいため、区切りの良いところで区切って文字列配列として記述し `ControlToCommand.vi` に渡す前に `Concat` で繋げた
 - パラメータに紐づけされるコントロールは中央のクラスタの他に、下部の `X`, `Y`, `Frequency`, `Auto Phase`, `Status` も含まれる
-  - すべてを配列にして `CommandsToArray.vi` に渡している
+  - すべてを配列にして `ControlToCommand.vi` に渡している
     - コマンドリストはこの配列の順番に合わせて記述する
     - クラスタについてはサブコントロールごとのコマンドを列挙する
     - ここではクラスタ内に１８個それ以外に５個で合計２１個のコントロールに対応するコマンドを与えている
@@ -142,3 +144,21 @@ Signal Recovery 製のロックインアンプ 7280 を制御するプログラ�
     - 更新が必要なものだけを `Case` ストラクチャで処理する
     - `ValueMap` を使うとコントロール名から値を得られるので適切な型に直して用いる
     - コントロールの `Value` プロパティへ代入することでコントロールの値を更新する
+
+TectronixDPO4000OscilloScope.vi
+--
+
+手持ちの DPO4054 のために作成した。
+
+背面の LAN ポートで接続して使うことを想定している。
+
+![](image4md/panel-DPO4000.png)
+
+StanfordResSysDG645DelayGenerator.vi
+--
+
+手持ちの DG645 のために作成した。
+
+背面の LAN ポートで接続して使うことを想定している。
+
+![](image4md/panel-DG645.png)
