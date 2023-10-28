@@ -102,6 +102,8 @@
 		<Item Name="SetControlValues.vi" Type="VI" URL="../../../lib/SetGetControlValue/SetControlValues.vi"/>
 		<Item Name="SettingManager.vi" Type="VI" URL="../../SettingManager.vi"/>
 		<Item Name="SignalRecovery7280Lock-inAmp.vi" Type="VI" URL="../../../hardware/SignalRecovery7280Lock-inAmp.vi"/>
+		<Item Name="StanfordResSysDG645DelayGenerator.vi" Type="VI" URL="../../../hardware/StanfordResSysDG645DelayGenerator.vi"/>
+		<Item Name="TectronixDPO4000OscilloScope.vi" Type="VI" URL="../../../hardware/TectronixDPO4000OscilloScope.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="1D String Array to Delimited String.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/1D String Array to Delimited String.vi"/>
@@ -343,6 +345,7 @@
 				<Item Name="NI_LVConfig.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/config.llb/NI_LVConfig.lvlib"/>
 				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
 				<Item Name="NI_WebServices.lvlib" Type="Library" URL="/&lt;vilib&gt;/wsapi/NI_WebServices.lvlib"/>
+				<Item Name="Normalize End Of Line.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/Normalize End Of Line.vi"/>
 				<Item Name="Not Found Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Not Found Dialog.vi"/>
 				<Item Name="Path To Command Line String.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/Path To Command Line String.vi"/>
 				<Item Name="PathToUNIXPathString.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/CFURL.llb/PathToUNIXPathString.vi"/>
@@ -408,6 +411,7 @@
 			<Item Name="JSONtoControlValue.vi" Type="VI" URL="../../../lib/SetGetControlValue/JSONtoControlValue.vi"/>
 			<Item Name="JSONtoControlValueCore.vi" Type="VI" URL="../../../lib/SetGetControlValue/JSONtoControlValueCore.vi"/>
 			<Item Name="ListControlNames.vi" Type="VI" URL="../../SettingManager/ListControlNames.vi"/>
+			<Item Name="LogToStringControl.vi" Type="VI" URL="../../../lib/UI/LogToStringControl.vi"/>
 			<Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -439,22 +443,22 @@
 			<Item Name="SettingManagerRunVI.vi" Type="VI" URL="../../SettingManager/SettingManagerRunVI.vi"/>
 			<Item Name="SlippyInterval.vi" Type="VI" URL="../../ParameterSweeper/SlippyInterval.vi"/>
 			<Item Name="SplitControlPath.vi" Type="VI" URL="../../../lib/SetGetControlValue/SplitControlPath.vi"/>
+			<Item Name="StanfordResSysDG645DelayGeneratorFromDLAY.vi" Type="VI" URL="../../../hardware/StanfordResSysDG645DelayGeneratorFromDLAY.vi"/>
+			<Item Name="StanfordResSysDG645DelayGeneratorToDLAY.vi" Type="VI" URL="../../../hardware/StanfordResSysDG645DelayGeneratorToDLAY.vi"/>
 			<Item Name="StringArrayIntersection.vi" Type="VI" URL="../../../lib/String/StringArrayIntersection.vi"/>
 			<Item Name="StringArrayToSet.vi" Type="VI" URL="../../../lib/String/StringArrayToSet.vi"/>
 			<Item Name="StringToComplexNumber.vi" Type="VI" URL="../../../lib/String/StringToComplexNumber.vi"/>
 			<Item Name="StringToJSON.vi" Type="VI" URL="../../../lib/String/JSON/StringToJSON.vi"/>
 			<Item Name="test-runnee.vi" Type="VI" URL="../../../test/test-runnee.vi"/>
-			<Item Name="TextControlledInstrumCommandsToArray.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumCommandsToArray.vi"/>
-			<Item Name="TextControlledInstrumCommandsToArrayMulti.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrum/TextControlledInstrumCommandsToArrayMulti.vi"/>
-			<Item Name="TextControlledInstrumCommandsToArraySingle.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrum/TextControlledInstrumCommandsToArraySingle.vi"/>
 			<Item Name="TextControlledInstrumControlChanged.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumControlChanged.vi"/>
-			<Item Name="TextControlledInstrumControlChangedSub.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrum/TextControlledInstrumControlChangedSub.vi"/>
-			<Item Name="TextControlledInstrumControlToCommands.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrum/TextControlledInstrumControlToCommands.vi"/>
+			<Item Name="TextControlledInstrumControlToCommand.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumControlToCommand.vi"/>
+			<Item Name="TextControlledInstrumControlToCommandMulti.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrum/TextControlledInstrumControlToCommandMulti.vi"/>
+			<Item Name="TextControlledInstrumControlToCommandMultiSub.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrum/TextControlledInstrumControlToCommandMultiSub.vi"/>
+			<Item Name="TextControlledInstrumControlToCommandSingle.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrum/TextControlledInstrumControlToCommandSingle.vi"/>
 			<Item Name="TextControlledInstrumIOQueuePacket.ctl" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumIOQueuePacket.ctl"/>
 			<Item Name="TextControlledInstrumMakeControlMap.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumMakeControlMap.vi"/>
 			<Item Name="TextControlledInstrumReadCommand.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumReadCommand.vi"/>
 			<Item Name="TextControlledInstrumUpdateControls.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumUpdateControls.vi"/>
-			<Item Name="TextControlledInstrumUpdateControlsSub.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrum/TextControlledInstrumUpdateControlsSub.vi"/>
 			<Item Name="TextControlledInstrumWriteCommands.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumWriteCommands.vi"/>
 			<Item Name="VariantArrayAccess.vi" Type="VI" URL="../../../lib/Variant/VariantArrayAccess.vi"/>
 			<Item Name="VariantArrayAccess1D.vi" Type="VI" URL="../../../lib/Variant/VariantArrayAccess1D.vi"/>
