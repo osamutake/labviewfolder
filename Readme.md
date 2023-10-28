@@ -39,6 +39,7 @@
   - [`lib/UI/`](lib/UI) UI 関連
     - `DeferPanelUpdate.vi` : コントロールの値を変更する間 VI の表示更新を止める
     - `InsertMenubarItem.vi` : VI のメニューバーに新しい項目を追加する
+    - `LogToStringControl.vi` : ログテキストを文字列コントロールに追加する
   - [`lib/Variant/`](lib/Variant) `Variant` 関連
     - `CoerseNumericType.vi` : 数値を `Variant` で指定された型に変換する
     - `VariantArrayAccess.vi` : `Variant` に格納された配列の要素を読み書きする
