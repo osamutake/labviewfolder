@@ -8,6 +8,7 @@ UI 関連のライブラリ。
     - [DeferPanelUpdate.vi](#deferpanelupdatevi)
     - [InsertMenubarItem.vi](#insertmenubaritemvi)
     - [LogToStringControl.vi](#logtostringcontrolvi)
+    - [SetFrontPanelSize.vi](#setfrontpanelsizevi)
 
 提供される VI
 --
@@ -84,3 +85,17 @@ VI の端子構成：
 - `Reduce By` : `Reduce Every` 回のログ追加ごとに `Reduce By` で指定された割合だけ古いログを削除する
   - デフォルトでは 100 回の追加ごとに古い方から２割のログを削除する
 
+### SetFrontPanelSize.vi
+
+VI のフロントパネルサイズを変更する
+
+幅のみ、高さのみを変更することもできる
+
+![](image4md/panel-SetFrontPanelSize.png)
+
+- `VI Reference` : 変更したい VI を指定
+- `Width` : 幅を指定する
+  - 何も繋がない、あるいは 0 を指定すると変更しない
+- `Height` : 幅を指定する
+  - 何も繋がない、あるいは 0 を指定すると変更しない
+- `VI Reference out` : VI のリファレンスがそのまま出る

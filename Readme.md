@@ -41,6 +41,7 @@
     - `DeferPanelUpdate.vi` : コントロールの値を変更する間 VI の表示更新を止める
     - `InsertMenubarItem.vi` : VI のメニューバーに新しい項目を追加する
     - `LogToStringControl.vi` : ログテキストを文字列コントロールに追加する
+    - `SetFrontPanelSize.vi` : VI のフロントパネルサイズを変更する
   - [`lib/Variant/`](lib/Variant) `Variant` 関連
     - `CoerseNumericType.vi` : 数値を `Variant` で指定された型に変換する
     - `VariantArrayAccess.vi` : `Variant` に格納された配列の要素を読み書きする
@@ -188,4 +189,9 @@ LabVIEW メタプログラミングの勧め
   - `lib/Hardware/ParamClusterControl.vi` を削除して、代わりに `lib/Hsardware/TextControlledInstrum` ライブラリを作成した
     - １つのクラスタを制御するだけでなく、クラスタを含む多数のコントロールを簡単に制御できるようになった
   - 同ライブラリを使って `hardware/SignalRecovery7280Lock-inAmp.vi` を作成した
-  - 銅ライブラリを使って `hardware/TectronixDPO4000OscilloScope.vi` を作成した
+  - 同ライブラリを使って `hardware/TectronixDPO4000OscilloScope.vi` を作成した
+- 2023-10-28
+  - `hardware/StanfordSysResDG645DelayGenerator.vi` を作成した
+- 2023-10-29
+  - `lib/UI/SetFrontPanelSize.vi` を作成した
+  - それを使って `hardware/StanfordSysResDG645DelayGenerator.vi` を書き換えた
