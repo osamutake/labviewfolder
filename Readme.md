@@ -18,7 +18,7 @@
     - `FileMultipleBackup.vi` : 複数世代にわたるバックアップファイルを管理
     - `SequentialFileName.vi` : 連番付きファイル名の番号を1増やす
   - [`lib/Hardware/`](lib/Hardware) ハードウェア関連
-    - `TextControlledInstrum` : テキストコマンドで読取・設定可能なハードウェアを制御する
+    - `TextControlledInstrum` : テキストコマンドで読取・設定可能なハードウェアを制御する [→チュートリアル](lib/Hardware/TextControlledInstrum-Tutorial.md)
     - `SerialPortSetup.vi` : シリアルポートの設定を行う
   - [`lib/SetGetControlValue/`](lib/SetGetControlValue) コントロール値の読み書きを行う
     - `SetControlValue.vi` : 名前を指定してコントロールに値を書き込む
@@ -195,3 +195,5 @@ LabVIEW メタプログラミングの勧め
 - 2023-10-29
   - `lib/UI/SetFrontPanelSize.vi` を作成した
   - それを使って `hardware/StanfordSysResDG645DelayGenerator.vi` を書き換えた
+- 2023-10-30
+  - [`lib/Hardware/TextControlledInstrum` ライブラリにチュートリアルを書いた](lib/Hardware/TextControlledInstrum-Tutorial.md)

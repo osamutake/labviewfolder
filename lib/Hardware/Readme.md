@@ -28,7 +28,7 @@ TextControlledInstrum
 
 シリアル通信やGPIB通信のような行単位のテキストコマンドのやり取りで読取・設定可能なハードウェアを制御するプログラムを作成するのを助けるライブラリ
 
-例えば下図の Signal Recovery 製のロックインアンプ 7280 をシリアル通信で制御するプログラムはこのライブラリで作成した。
+例えば下図の Signal Recovery 製のロックインアンプ 7280 をシリアル通信で制御するプログラムなどはこのライブラリで作成した。
 
 - 機器の設定項目に対応する多数のコントロールが VI 上に並ぶ
 - 定期的に機器から最新の値が読みだされてコントロールの値が更新される
@@ -38,5 +38,11 @@ TextControlledInstrum
 
 詳細は別ページに記述した：[TextControlledInstrum.md](TextControlledInstrum.md)
 
+実際にプログラムを作成する手順を示したチュートリアルも提供されている：
+[TextControlledInstrum-Tutorial.md](TextControlledInstrum-Tutorial.md)
+
 ![](../../hardware/image4md/panel-SignalRecovery7280.png)
 
+![](../../hardware/image4md/panel-DPO4000.png)
+
+![](../../hardware/image4md/panel-DG645.png)

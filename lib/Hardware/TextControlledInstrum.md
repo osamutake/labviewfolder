@@ -7,6 +7,7 @@ lib/Hardware/TextControlledInstrum
 - [lib/Hardware/TextControlledInstrum](#libhardwaretextcontrolledinstrum)
   - [目次](#目次)
   - [概要](#概要)
+  - [チュートリアル](#チュートリアル)
   - [使用例１：](#使用例１)
   - [TextControlledInstrumControlToCommand.vi](#textcontrolledinstrumcontroltocommandvi)
   - [TextControlledInstrumUpdateControls.vi](#textcontrolledinstrumupdatecontrolsvi)
@@ -31,6 +32,13 @@ lib/Hardware/TextControlledInstrum
 本ライブラリを使うことでこのような制御プログラムの作成を楽に行える
 
 ![](../../hardware/image4md/panel-SignalRecovery7280.png)
+
+チュートリアル
+--
+
+実際にプログラムを作成する手順を示したチュートリアルがこちらにある。
+
+チュートリアル ＞＞＞ [TextControlledInstrum-Tutorial.md](TextControlledInstrum-Tutorial.md)
 
 使用例１：
 --
