@@ -29,6 +29,9 @@
 			<Item Name="test-CoerseNumericTypeFixedPoint.vi" Type="VI" URL="../../../lib/Variant/test/test-CoerseNumericTypeFixedPoint.vi"/>
 			<Item Name="test-SetGetControlValueSub.vi" Type="VI" URL="../../../lib/SetGetControlValue/test/test-SetGetControlValueSub.vi"/>
 			<Item Name="test-SlippyInterval.vi" Type="VI" URL="../../ParameterSweeper/test/test-SlippyInterval.vi"/>
+			<Item Name="totorial-066.vi" Type="VI" URL="../../../lib/Hardware/image4md/totorial-066.vi"/>
+			<Item Name="tutorial-062.vi" Type="VI" URL="../../../lib/Hardware/image4md/tutorial-062.vi"/>
+			<Item Name="tutorial-VISAWriteRead3.vi" Type="VI" URL="../../../lib/Hardware/image4md/tutorial-VISAWriteRead3.vi"/>
 		</Item>
 		<Item Name="test" Type="Folder">
 			<Item Name="test-runner" Type="Folder">
@@ -439,6 +442,7 @@
 			<Item Name="SavedSettingsWriteToINI.vi" Type="VI" URL="../../SettingManager/SavedSettingsWriteToINI.vi"/>
 			<Item Name="SequentialFileName.vi" Type="VI" URL="../../../lib/File/SequentialFileName.vi"/>
 			<Item Name="SerialPortSetup.vi" Type="VI" URL="../../../lib/Hardware/SerialPortSetup.vi"/>
+			<Item Name="SetFrontPanelSize.vi" Type="VI" URL="../../../lib/UI/SetFrontPanelSize.vi"/>
 			<Item Name="SettingManagerRestore.vi" Type="VI" URL="../../SettingManager/SettingManagerRestore.vi"/>
 			<Item Name="SettingManagerRunVI.vi" Type="VI" URL="../../SettingManager/SettingManagerRunVI.vi"/>
 			<Item Name="SlippyInterval.vi" Type="VI" URL="../../ParameterSweeper/SlippyInterval.vi"/>
@@ -460,6 +464,8 @@
 			<Item Name="TextControlledInstrumReadCommand.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumReadCommand.vi"/>
 			<Item Name="TextControlledInstrumUpdateControls.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumUpdateControls.vi"/>
 			<Item Name="TextControlledInstrumWriteCommands.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumWriteCommands.vi"/>
+			<Item Name="tutorial-062_FromDLAY.vi" Type="VI" URL="../../../lib/Hardware/image4md/tutorial-062_FromDLAY.vi"/>
+			<Item Name="tutorial-062_ToDLAY.vi" Type="VI" URL="../../../lib/Hardware/image4md/tutorial-062_ToDLAY.vi"/>
 			<Item Name="VariantArrayAccess.vi" Type="VI" URL="../../../lib/Variant/VariantArrayAccess.vi"/>
 			<Item Name="VariantArrayAccess1D.vi" Type="VI" URL="../../../lib/Variant/VariantArrayAccess1D.vi"/>
 			<Item Name="VariantArrayAccessMulti.vi" Type="VI" URL="../../../lib/Variant/VariantArrayAccessMulti.vi"/>
