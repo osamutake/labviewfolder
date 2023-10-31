@@ -198,3 +198,28 @@ LabVIEW メタプログラミングの勧め
   - それを使って `hardware/StanfordSysResDG645DelayGenerator.vi` を書き換えた
 - 2023-10-30
   - [`lib/Hardware/TextControlledInstrum` ライブラリにチュートリアルを書いた](lib/Hardware/TextControlledInstrum-Tutorial.md)
+- 2023-10-31
+  - `TextControlledInstrum` の `ReadCommand.vi`, `WriteCommands.vi` を複数の VI で使うと Queue の共有に失敗してエラーになるため毎回 Queue を作り直すようにした
+  - `SignalRecovery7280Lock-inAmp.vi` に Connect ボタンを追加した
+    - `ParameterManager` でこの値を保存しておくと自動で接続できる
+  - `SettingManager` 関連
+    - `EnumOpenedVIs.vi` サブVIとして動作中のもの、壊れているものを表示しないようにした
+    - `CtrlTreeReload.vi` でエラーが生じても止まらないようにした
+    - `CtrlTreeAddControls.vi` が Disable なコントロールをスキップするようにした
+    - `CtrlTreeAddDummyNodes.vi` の正規表現を単純化してエラーが出ないようにした
+    - `SavedSettingsOpenAllVIs.vi` にブレークポイントが含まれていたのを除去した
+  - `SetGetControlValue` で `VISA Refnum` コントロールの読み書きをサポートした
+  - `NFCorpLI5640Lock-inAmp.vi` を追加した
+  - `TextControlledInstrum` の数値パラメータの読み書きコマンドにスケールとオフセットを指定できるようにした（未テスト）
+  - `ADCDataRecorder.vi` を手直し
+    - `Waveform` チャートの見た目を変更
+    - `Clear` ボタンを追加
+    - `Parameters to Save` で VI 名が `DataRecorder.vi` のままになっておりエラーが出てたのを直した
+    - データファイルに書き込むヘッダー情報のターミネーターを null 文字に変更した
+  - `ParameterSweeper.vi` 関連
+    - `Record Sync` で Sweep を止めるときも連動するようにした
+    - VI とコントロールの選択肢を改善
+      - VI のリストに動作中のサブ VI が入らないようにした
+      - 配列コントロールを適切に追加するようにした
+  - `DACSinglePoint.vi` の値を制御する配列コントロールの名前を Values に改名した
+  	- 長いと `ParameterSweeper.vi` で指定しづらいため
