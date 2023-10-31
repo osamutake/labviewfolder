@@ -10,6 +10,7 @@
 - [`hardware/`](hardware/) ハードウェア関連ライブラリ
   - `ADCDataRecorder.vi` : ADC 入力を一定サンプリングレートで記録、ディスクへ保存する
   - `DACSinglePoint.vi` : DAC 出力値を変更する
+  - `NFCorpLI5640Lock-inAmp.vi` : ロックインアンプ LI5640 の設定を行う（シリアル接続）
   - `SignalRecovery7280Lock-inAmp.vi` : ロックインアンプ 7280 の設定を行う（シリアル接続）
   - `StanfordSysResDG645DelayGenerator.vi` : ディレイジェネレータ DG645 の制御を行う（LAN 接続）
   - `TectronixDPO4000OscilloScope.vi` : オシロスコープ DPO4000 シリーズの制御を行う（LAN 接続）
