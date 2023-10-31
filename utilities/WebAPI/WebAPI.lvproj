@@ -99,6 +99,7 @@
 			</Item>
 			<Item Name="スタートアップVI" Type="Startup VIs Container"/>
 		</Item>
+		<Item Name="NFCorpLI5640Lock-inAmp.vi" Type="VI" URL="../../../hardware/NFCorpLI5640Lock-inAmp.vi"/>
 		<Item Name="ParameterSweeper.vi" Type="VI" URL="../../ParameterSweeper.vi"/>
 		<Item Name="SetControlValue.vi" Type="VI" URL="../../../lib/SetGetControlValue/SetControlValue.vi"/>
 		<Item Name="SetControlValueHTTP.vi" Type="VI" URL="../SetControlValueHTTP.vi"/>
@@ -332,6 +333,7 @@
 				<Item Name="Get Text Rect.vi" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/Get Text Rect.vi"/>
 				<Item Name="GetHelpDir.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/GetHelpDir.vi"/>
 				<Item Name="GetRTHostConnectedProp.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/GetRTHostConnectedProp.vi"/>
+				<Item Name="Is Value Changed.vim" Type="VI" URL="/&lt;vilib&gt;/Utility/Is Value Changed.vim"/>
 				<Item Name="LabVIEWHTTPClient.lvlib" Type="Library" URL="/&lt;vilib&gt;/httpClient/LabVIEWHTTPClient.lvlib"/>
 				<Item Name="Less Comparable.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Comparison/Less/Less Comparable/Less Comparable.lvclass"/>
 				<Item Name="Less Functor.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Comparison/Less/Less Functor/Less Functor.lvclass"/>
