@@ -257,4 +257,9 @@ LabVIEW メタプログラミングの勧め
   - `ScriptManager`
     - `AppendScript` で `Store Undo Entry` が2回呼ばれていたのを直した
     - `AppendScript` で自身を前面に出すようにした
+    - `AppendScript` で空行が正しく入らないときがあったのを直した
     - 初回の `Load` で `editor refs` が未定義だったのを直した
+  - `SetControlValues` で
+    - 頭に改行が入っているとエラーになっていたのを直した
+    - `/run` がすでに `Running` だとエラーを生じていたのを直した
+  - `SetControlValue`, `GetControlValue`, `GetControlValues` で `VI Reference` を `Close` するようにした

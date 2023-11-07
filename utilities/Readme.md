@@ -83,6 +83,7 @@ VIPropertyPicker.vi
   - `/load` : `VI` を読み込みフロントパネルを開く
   - `/front` : `VI` を読み込み最前面に表示
   - `/run` : `VI` を読み込み実行する
+  - `/call` : `VI` を読み込み実行し終了を待つ
   - `/stop` : `VI` を読み込み実行中であれば停止
   - `/state` : `Standard`, `Maximize`, `Minimize`, `Close` を代入して表示状態を変更
   - `/position` : `[12,34]` の形でフロントパネル位置を指定
