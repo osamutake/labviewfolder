@@ -17,6 +17,7 @@
 - [`lib/`](lib/) 汎用のサブ VI ライブラリ
   - [`lib/File/`](lib/File) ファイル関連
     - `FileMultipleBackup.vi` : 複数世代にわたるバックアップファイルを管理
+    - `SaveProjectForPreviousVersion.vi` : `.lvproj` ファイルを `Save for previous version` する
     - `SequentialFileName.vi` : 連番付きファイル名の番号を1増やす
   - [`lib/Hardware/`](lib/Hardware) ハードウェア関連
     - `TextControlledInstrum` : テキストコマンドで読取・設定可能なハードウェアを制御する [→チュートリアル](lib/Hardware/TextControlledInstrum-Tutorial.md)
@@ -263,3 +264,5 @@ LabVIEW メタプログラミングの勧め
     - 頭に改行が入っているとエラーになっていたのを直した
     - `/run` がすでに `Running` だとエラーを生じていたのを直した
   - `SetControlValue`, `GetControlValue`, `GetControlValues` で `VI Reference` を `Close` するようにした
+  - `SaveProjectForPreviousVersion.vi` を追加
+  
