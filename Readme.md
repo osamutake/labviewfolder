@@ -141,17 +141,27 @@ LabVIEW メタプログラミングの勧め
 
 あとは複数のの機器制御 VI の上にある制御器の値を測定の種類ごとに初期化することができれば言うことがありません？
 
-[SettingManager.vi](utilities/#settingmanagervi) は、複数の VI にまたがって多数の制御器の値を「設定」として複数保存しておき、ダブルクリック一発で値を復元することが可能なアプリケーションです。
+[ScriptManager.vi](utilities/#scriptmanagervi) は、複数の VI にまたがって多数の制御器の値を書き換えるスクリプトを複数保存しておき、ダブルクリック一発で値を復元することが可能なアプリケーションです。
 
-![](utilities/image4md/panel-SettingManager.png)
+![](utilities/image4md/panel-ScriptManager.png)
 
-左側に VI とその上の制御器の一覧が出るので、保存したいものを選んで `Save` を押すと右側に設定項目ができます。この項目をダブルクリックすると保存したときの値が書き戻されます。
+画面右下のスクリプトには、`C:\path\to\some.vi` という VI の `Control1` というコントロールに `123` を、`Control2` というコントロールに `"abc"` を設定し、`500 ms` 待ってから `VI` を実行、`C:\path\to\other.vi` という VI の `Control3` というコントロールに `456` を、`Control4` というコントロールに `"def"` を設定し `VI` を実行、という手順が書かれています。
 
-保存する際にコントロールだけでなく VI を選んでおくと VI の表示位置も復元されます。
+このようなスクリプトは `SetControlValues.vi` へそのまま渡すだけでも実行できます。いよいよ「メタプログラミング」らしくなってきました！
 
-また、復元時に VI が開かれていない場合には自動で開くこともできます。
+スクリプトを手で書くのも難しくはありませんが、VI 名やコントロール名を一字一句間違わずに記述するのは少し骨が折れます。
 
-上記の `ParameterSweeper.vi` や `DataRecorder.vi` は非常に汎用性の高いプログラムなので、異なる測定には異なる設定で利用したくなるのですが、それぞれに対する設定を `SettingManager.vi` で保存しておけば簡単に測定を開始できます。
+[`VIPropertyPicker.vi`](utilities/#VIPropertyPicker) はスクリプトの作成を手助けします。
+
+![](utilities/image4md/panel-VIPropertyPicker.png)
+
+右上の VI 一覧の１つを選択すると左側にその上の制御器の一覧が出ます。設定したいものを選ぶと右下に対応するスクリプトが自動生成されます。
+
+上部の ◆ のついた項目は VI の表示や動作状態を変更するためのコマンドです。これらも選択するだけでスクリプトに組み込まれます。
+
+出来上がったスクリプトはコピー＆ペーストして使っても良いですし、`Append to editor in ScriptManager` ボタンで `ScriptManager` のスクリプトエディタへ直接追加することもできます。
+
+上記の `ParameterSweeper.vi` や `ADCDataRecorder.vi` は非常に汎用性の高いプログラムなので、異なる測定には異なる設定で利用したくなるのですが、それぞれに対する設定を `ScriptManager.vi` で保存しておけば簡単に測定を開始できます。
 
 ということで、LabVIEW メタプログラミングをお勧めしています。
 
