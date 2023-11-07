@@ -16,7 +16,7 @@
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="for conversion" Type="Folder">
 			<Item Name="example-DeferePanelUpdate.vi" Type="VI" URL="../../../lib/UI/image4md/example-DeferePanelUpdate.vi"/>
-			<Item Name="example-InsertMenubarItem.vi" Type="VI" URL="../../../lib/UI/image4md/example-InsertMenubarItem.vi"/>
+			<Item Name="example-InsertMenuItemsWithShortcut.vi" Type="VI" URL="../../../lib/UI/image4md/example-InsertMenuItemsWithShortcut.vi"/>
 			<Item Name="example-RaiseErrorIf.vi" Type="VI" URL="../../../lib/image4md/example-RaiseErrorIf.vi"/>
 			<Item Name="example-SequentialFileName.vi" Type="VI" URL="../../../lib/File/example/example-SequentialFileName.vi"/>
 			<Item Name="example-SetGetControlValue.vi" Type="VI" URL="../../../lib/SetGetControlValue/image4md/example-SetGetControlValue.vi"/>
@@ -33,6 +33,22 @@
 			<Item Name="tutorial-062.vi" Type="VI" URL="../../../lib/Hardware/image4md/tutorial-062.vi"/>
 			<Item Name="tutorial-VISAWriteRead3.vi" Type="VI" URL="../../../lib/Hardware/image4md/tutorial-VISAWriteRead3.vi"/>
 		</Item>
+		<Item Name="hardware" Type="Folder">
+			<Item Name="ADCDataRecorder.vi" Type="VI" URL="../../../hardware/ADCDataRecorder.vi"/>
+			<Item Name="DACSinglePoint.vi" Type="VI" URL="../../../hardware/DACSinglePoint.vi"/>
+			<Item Name="NFCorpLI5640Lock-inAmp.vi" Type="VI" URL="../../../hardware/NFCorpLI5640Lock-inAmp.vi"/>
+			<Item Name="SignalRecovery7280Lock-inAmp.vi" Type="VI" URL="../../../hardware/SignalRecovery7280Lock-inAmp.vi"/>
+			<Item Name="StanfordResSysDG645DelayGenerator.vi" Type="VI" URL="../../../hardware/StanfordResSysDG645DelayGenerator.vi"/>
+			<Item Name="TectronixDPO4000OscilloScope.vi" Type="VI" URL="../../../hardware/TectronixDPO4000OscilloScope.vi"/>
+		</Item>
+		<Item Name="lib" Type="Folder">
+			<Item Name="GetControlValue.vi" Type="VI" URL="../../../lib/SetGetControlValue/GetControlValue.vi"/>
+			<Item Name="GetControlValueHTTP.vi" Type="VI" URL="../GetControlValueHTTP.vi"/>
+			<Item Name="GetControlValues.vi" Type="VI" URL="../../../lib/SetGetControlValue/GetControlValues.vi"/>
+			<Item Name="SetControlValue.vi" Type="VI" URL="../../../lib/SetGetControlValue/SetControlValue.vi"/>
+			<Item Name="SetControlValueHTTP.vi" Type="VI" URL="../SetControlValueHTTP.vi"/>
+			<Item Name="SetControlValues.vi" Type="VI" URL="../../../lib/SetGetControlValue/SetControlValues.vi"/>
+		</Item>
 		<Item Name="test" Type="Folder">
 			<Item Name="test-runner" Type="Folder">
 				<Item Name="test-SequentialFileName.vi" Type="VI" URL="../../../lib/File/test/test-SequentialFileName.vi"/>
@@ -44,11 +60,11 @@
 			<Item Name="test-diff2.vi" Type="VI" URL="../../../test/test-diff2.vi"/>
 			<Item Name="test-runner.vi" Type="VI" URL="../../../test/test-runner.vi"/>
 		</Item>
-		<Item Name="ADCDataRecorder.vi" Type="VI" URL="../../../hardware/ADCDataRecorder.vi"/>
-		<Item Name="DACSinglePoint.vi" Type="VI" URL="../../../hardware/DACSinglePoint.vi"/>
-		<Item Name="GetControlValue.vi" Type="VI" URL="../../../lib/SetGetControlValue/GetControlValue.vi"/>
-		<Item Name="GetControlValueHTTP.vi" Type="VI" URL="../GetControlValueHTTP.vi"/>
-		<Item Name="GetControlValues.vi" Type="VI" URL="../../../lib/SetGetControlValue/GetControlValues.vi"/>
+		<Item Name="utilities" Type="Folder">
+			<Item Name="ParameterSweeper.vi" Type="VI" URL="../../ParameterSweeper.vi"/>
+			<Item Name="ScriptManager.vi" Type="VI" URL="../../ScriptManager.vi"/>
+			<Item Name="VIPropertyPicker.vi" Type="VI" URL="../../VIPropertyPicker.vi"/>
+		</Item>
 		<Item Name="labview" Type="Web Service">
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
@@ -99,24 +115,15 @@
 			</Item>
 			<Item Name="スタートアップVI" Type="Startup VIs Container"/>
 		</Item>
-		<Item Name="NFCorpLI5640Lock-inAmp.vi" Type="VI" URL="../../../hardware/NFCorpLI5640Lock-inAmp.vi"/>
-		<Item Name="ParameterSweeper.vi" Type="VI" URL="../../ParameterSweeper.vi"/>
-		<Item Name="SetControlValue.vi" Type="VI" URL="../../../lib/SetGetControlValue/SetControlValue.vi"/>
-		<Item Name="SetControlValueHTTP.vi" Type="VI" URL="../SetControlValueHTTP.vi"/>
-		<Item Name="SetControlValues.vi" Type="VI" URL="../../../lib/SetGetControlValue/SetControlValues.vi"/>
-		<Item Name="SettingManager.vi" Type="VI" URL="../../SettingManager.vi"/>
-		<Item Name="SignalRecovery7280Lock-inAmp.vi" Type="VI" URL="../../../hardware/SignalRecovery7280Lock-inAmp.vi"/>
-		<Item Name="StanfordResSysDG645DelayGenerator.vi" Type="VI" URL="../../../hardware/StanfordResSysDG645DelayGenerator.vi"/>
-		<Item Name="TectronixDPO4000OscilloScope.vi" Type="VI" URL="../../../hardware/TectronixDPO4000OscilloScope.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="1D String Array to Delimited String.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/1D String Array to Delimited String.vi"/>
-				<Item Name="8.6CompatibleGlobalVar.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/8.6CompatibleGlobalVar.vi"/>
 				<Item Name="BuildHelpPath.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/BuildHelpPath.vi"/>
 				<Item Name="Check if File or Folder Exists.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
 				<Item Name="Check Special Tags.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Check Special Tags.vi"/>
 				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
 				<Item Name="Convert property node font to graphics font.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Convert property node font to graphics font.vi"/>
+				<Item Name="Create Cursor From File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Create Cursor From File.vi"/>
 				<Item Name="DAQmx Clear Task.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/task.llb/DAQmx Clear Task.vi"/>
 				<Item Name="DAQmx Create Channel (AI-Acceleration-4 Wire DC Voltage).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/create/channels.llb/DAQmx Create Channel (AI-Acceleration-4 Wire DC Voltage).vi"/>
 				<Item Name="DAQmx Create Channel (AI-Acceleration-Accelerometer).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/create/channels.llb/DAQmx Create Channel (AI-Acceleration-Accelerometer).vi"/>
@@ -311,6 +318,7 @@
 				<Item Name="DAQmx Write (Raw 1D U32).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Raw 1D U32).vi"/>
 				<Item Name="DAQmx Write.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write.vi"/>
 				<Item Name="Delimited String to 1D String Array.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/Delimited String to 1D String Array.vi"/>
+				<Item Name="Destroy Cursor.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Destroy Cursor.vi"/>
 				<Item Name="Details Display Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Details Display Dialog.vi"/>
 				<Item Name="Dflt Data Dir.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Dflt Data Dir.vi"/>
 				<Item Name="DialogType.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/DialogType.ctl"/>
@@ -340,14 +348,16 @@
 				<Item Name="Less.vim" Type="VI" URL="/&lt;vilib&gt;/Comparison/Less.vim"/>
 				<Item Name="Longest Line Length in Pixels.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Longest Line Length in Pixels.vi"/>
 				<Item Name="LVBoundsTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVBoundsTypeDef.ctl"/>
+				<Item Name="lveventtype.ctl" Type="VI" URL="/&lt;vilib&gt;/event_ctls.llb/lveventtype.ctl"/>
 				<Item Name="LVFixedPointRepBitsTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/fxp/LVFixedPointRepBitsTypeDef.ctl"/>
 				<Item Name="LVFixedPointRepRangeTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/fxp/LVFixedPointRepRangeTypeDef.ctl"/>
 				<Item Name="LVMenuShortCut.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVMenuShortCut.ctl"/>
 				<Item Name="LVNumericRepresentation.ctl" Type="VI" URL="/&lt;vilib&gt;/numeric/LVNumericRepresentation.ctl"/>
+				<Item Name="LVPoint32TypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVPoint32TypeDef.ctl"/>
 				<Item Name="LVRectTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRectTypeDef.ctl"/>
+				<Item Name="LVSelectionTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVSelectionTypeDef.ctl"/>
 				<Item Name="NI_Data Type.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/Data Type/NI_Data Type.lvlib"/>
 				<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
-				<Item Name="NI_LVConfig.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/config.llb/NI_LVConfig.lvlib"/>
 				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
 				<Item Name="NI_WebServices.lvlib" Type="Library" URL="/&lt;vilib&gt;/wsapi/NI_WebServices.lvlib"/>
 				<Item Name="Normalize End Of Line.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/Normalize End Of Line.vi"/>
@@ -362,7 +372,7 @@
 				<Item Name="Set Cursor (Cursor ID).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Set Cursor (Cursor ID).vi"/>
 				<Item Name="Set Cursor (Icon Pict).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Set Cursor (Icon Pict).vi"/>
 				<Item Name="Set Cursor.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Set Cursor.vi"/>
-				<Item Name="Set Intersection.vim" Type="VI" URL="/&lt;vilib&gt;/set operations/Set Intersection.vim"/>
+				<Item Name="Set Difference.vim" Type="VI" URL="/&lt;vilib&gt;/set operations/Set Difference.vim"/>
 				<Item Name="Set String Value.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Set String Value.vi"/>
 				<Item Name="Simple Error Handler.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Simple Error Handler.vi"/>
 				<Item Name="Sort 1D Array Core.vim" Type="VI" URL="/&lt;vilib&gt;/Array/Helpers/Sort 1D Array Core.vim"/>
@@ -386,36 +396,18 @@
 			<Item Name="ControlNameUnescape.vi" Type="VI" URL="../../../lib/SetGetControlValue/ControlNameUnescape.vi"/>
 			<Item Name="ControlValueArrayToJSON.vi" Type="VI" URL="../../../lib/SetGetControlValue/ControlValueArrayToJSON.vi"/>
 			<Item Name="ControlValueToJSON.vi" Type="VI" URL="../../../lib/SetGetControlValue/ControlValueToJSON.vi"/>
-			<Item Name="CtrlTreeAddControls.vi" Type="VI" URL="../../SettingManager/CtrlTreeAddControls.vi"/>
-			<Item Name="CtrlTreeAddDummyNodes.vi" Type="VI" URL="../../SettingManager/CtrlTreeAddDummyNodes.vi"/>
-			<Item Name="CtrlTreeAddItem.vi" Type="VI" URL="../../SettingManager/CtrlTreeAddItem.vi"/>
-			<Item Name="CtrlTreeAddItemIndent.vi" Type="VI" URL="../../SettingManager/CtrlTreeAddItemIndent.vi"/>
-			<Item Name="CtrlTreeAddItemParent.vi" Type="VI" URL="../../SettingManager/CtrlTreeAddItemParent.vi"/>
-			<Item Name="CtrlTreeAddParentNode.vi" Type="VI" URL="../../SettingManager/CtrlTreeAddParentNode.vi"/>
-			<Item Name="CtrlTreeCheckSelection.vi" Type="VI" URL="../../SettingManager/CtrlTreeCheckSelection.vi"/>
-			<Item Name="CtrlTreeGetAppRef.vi" Type="VI" URL="../../SettingManager/CtrlTreeGetAppRef.vi"/>
-			<Item Name="CtrlTreeOpenApp.vi" Type="VI" URL="../../SettingManager/CtrlTreeOpenApp.vi"/>
-			<Item Name="CtrlTreeOpenUptoSelectedItems.vi" Type="VI" URL="../../SettingManager/CtrlTreeOpenUptoSelectedItems.vi"/>
-			<Item Name="CtrlTreeOpenVI.vi" Type="VI" URL="../../SettingManager/CtrlTreeOpenVI.vi"/>
-			<Item Name="CtrlTreePathsOfVI.vi" Type="VI" URL="../../SettingManager/CtrlTreePathsOfVI.vi"/>
-			<Item Name="CtrlTreeProcessSelection.vi" Type="VI" URL="../../SettingManager/CtrlTreeProcessSelection.vi"/>
-			<Item Name="CtrlTreeReload.vi" Type="VI" URL="../../SettingManager/CtrlTreeReload.vi"/>
-			<Item Name="CtrlTreeRestoreState.vi" Type="VI" URL="../../SettingManager/CtrlTreeRestoreState.vi"/>
-			<Item Name="CtrlTreeSaveState.vi" Type="VI" URL="../../SettingManager/CtrlTreeSaveState.vi"/>
-			<Item Name="CtrlTreeSelectionAsStringArray.vi" Type="VI" URL="../../SettingManager/CtrlTreeSelectionAsStringArray.vi"/>
-			<Item Name="CtrlTreeUpdateModifiedState.vi" Type="VI" URL="../../SettingManager/CtrlTreeUpdateModifiedState.vi"/>
 			<Item Name="DeferPanelUpdate.vi" Type="VI" URL="../../../lib/UI/DeferPanelUpdate.vi"/>
 			<Item Name="EnumApplications.vi" Type="VI" URL="../../../lib/SetGetControlValue/EnumApplications.vi"/>
-			<Item Name="EnumOpenedVIs.vi" Type="VI" URL="../../SettingManager/EnumOpenedVIs.vi"/>
 			<Item Name="FileMultipleBackup.vi" Type="VI" URL="../../../lib/File/FileMultipleBackup.vi"/>
 			<Item Name="FlattenPageSelecter.vi" Type="VI" URL="../../../lib/SetGetControlValue/FlattenPageSelecter.vi"/>
 			<Item Name="GetDisplayName.vi" Type="VI" URL="../../SettingManager/GetDisplayName.vi"/>
-			<Item Name="InsertMenubarItem.vi" Type="VI" URL="../../../lib/UI/InsertMenubarItem.vi"/>
+			<Item Name="InsertMenuItemsWithShortcut.vi" Type="VI" URL="../../../lib/UI/InsertMenuItemsWithShortcut.vi"/>
 			<Item Name="JSONObjectToMap.vi" Type="VI" URL="../../../lib/String/JSON/JSONObjectToMap.vi"/>
 			<Item Name="JSONtoArrayValue.vi" Type="VI" URL="../../../lib/SetGetControlValue/JSONtoArrayValue.vi"/>
 			<Item Name="JSONtoControlValue.vi" Type="VI" URL="../../../lib/SetGetControlValue/JSONtoControlValue.vi"/>
 			<Item Name="JSONtoControlValueCore.vi" Type="VI" URL="../../../lib/SetGetControlValue/JSONtoControlValueCore.vi"/>
 			<Item Name="ListControlNames.vi" Type="VI" URL="../../SettingManager/ListControlNames.vi"/>
+			<Item Name="LoadFromText.vi" Type="VI" URL="../../ScriptManager/LoadFromText.vi"/>
 			<Item Name="LogToStringControl.vi" Type="VI" URL="../../../lib/UI/LogToStringControl.vi"/>
 			<Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
@@ -426,33 +418,17 @@
 			<Item Name="ParseJSONObjectKey.vi" Type="VI" URL="../../../lib/String/JSON/ParseJSONObjectKey.vi"/>
 			<Item Name="ParseJSONString.vi" Type="VI" URL="../../../lib/String/JSON/ParseJSONString.vi"/>
 			<Item Name="RaiseErrorIf.vi" Type="VI" URL="../../../lib/RaiseErrorIf.vi"/>
-			<Item Name="SavedSettingsAppsAndVIs.vi" Type="VI" URL="../../SettingManager/SavedSettingsAppsAndVIs.vi"/>
-			<Item Name="SavedSettingsAsStringArray.vi" Type="VI" URL="../../SettingManager/SavedSettingsAsStringArray.vi"/>
-			<Item Name="SavedSettingsFilterDummy.vi" Type="VI" URL="../../SettingManager/SavedSettingsFilterDummy.vi"/>
-			<Item Name="SavedSettingsItemData.vi" Type="VI" URL="../../SettingManager/SavedSettingsItemData.vi"/>
-			<Item Name="SavedSettingsOpenAllVIs.vi" Type="VI" URL="../../SettingManager/SavedSettingsOpenAllVIs.vi"/>
-			<Item Name="SavedSettingsOptions.ctl" Type="VI" URL="../../SettingManager/SavedSettingsOptions.ctl"/>
-			<Item Name="SavedSettingsReadFromINI.vi" Type="VI" URL="../../SettingManager/SavedSettingsReadFromINI.vi"/>
-			<Item Name="SavedSettingsRemoveDuplication.vi" Type="VI" URL="../../SettingManager/SavedSettingsRemoveDuplication.vi"/>
-			<Item Name="SavedSettingsRestoreControlValues.vi" Type="VI" URL="../../SettingManager/SavedSettingsRestoreControlValues.vi"/>
-			<Item Name="SavedSettingsRestoreVIPosition.vi" Type="VI" URL="../../SettingManager/SavedSettingsRestoreVIPosition.vi"/>
-			<Item Name="SavedSettingsSetAllIcons.vi" Type="VI" URL="../../SettingManager/SavedSettingsSetAllIcons.vi"/>
-			<Item Name="SavedSettingsSetIcon.vi" Type="VI" URL="../../SettingManager/SavedSettingsSetIcon.vi"/>
-			<Item Name="SavedSettingsSetTitleOrDescription.vi" Type="VI" URL="../../SettingManager/SavedSettingsSetTitleOrDescription.vi"/>
-			<Item Name="SavedSettingsSplitDescription.vi" Type="VI" URL="../../SettingManager/SavedSettingsSplitDescription.vi"/>
-			<Item Name="SavedSettingsTitleAndDescription.vi" Type="VI" URL="../../SettingManager/SavedSettingsTitleAndDescription.vi"/>
-			<Item Name="SavedSettingsWriteToINI.vi" Type="VI" URL="../../SettingManager/SavedSettingsWriteToINI.vi"/>
+			<Item Name="ScriptManager.lvlib" Type="Library" URL="../../ScriptManager/ScriptManager.lvlib"/>
 			<Item Name="SequentialFileName.vi" Type="VI" URL="../../../lib/File/SequentialFileName.vi"/>
 			<Item Name="SerialPortSetup.vi" Type="VI" URL="../../../lib/Hardware/SerialPortSetup.vi"/>
 			<Item Name="SetFrontPanelSize.vi" Type="VI" URL="../../../lib/UI/SetFrontPanelSize.vi"/>
-			<Item Name="SettingManagerRestore.vi" Type="VI" URL="../../SettingManager/SettingManagerRestore.vi"/>
-			<Item Name="SettingManagerRunVI.vi" Type="VI" URL="../../SettingManager/SettingManagerRunVI.vi"/>
 			<Item Name="SlippyInterval.vi" Type="VI" URL="../../ParameterSweeper/SlippyInterval.vi"/>
 			<Item Name="SplitControlPath.vi" Type="VI" URL="../../../lib/SetGetControlValue/SplitControlPath.vi"/>
 			<Item Name="StanfordResSysDG645DelayGeneratorFromDLAY.vi" Type="VI" URL="../../../hardware/StanfordResSysDG645DelayGeneratorFromDLAY.vi"/>
 			<Item Name="StanfordResSysDG645DelayGeneratorToDLAY.vi" Type="VI" URL="../../../hardware/StanfordResSysDG645DelayGeneratorToDLAY.vi"/>
 			<Item Name="StringArrayIntersection.vi" Type="VI" URL="../../../lib/String/StringArrayIntersection.vi"/>
 			<Item Name="StringArrayToSet.vi" Type="VI" URL="../../../lib/String/StringArrayToSet.vi"/>
+			<Item Name="StringBeginWith.vi" Type="VI" URL="../../../lib/String/StringBeginWith.vi"/>
 			<Item Name="StringToComplexNumber.vi" Type="VI" URL="../../../lib/String/StringToComplexNumber.vi"/>
 			<Item Name="StringToJSON.vi" Type="VI" URL="../../../lib/String/JSON/StringToJSON.vi"/>
 			<Item Name="test-runnee.vi" Type="VI" URL="../../../test/test-runnee.vi"/>
@@ -466,6 +442,7 @@
 			<Item Name="TextControlledInstrumReadCommand.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumReadCommand.vi"/>
 			<Item Name="TextControlledInstrumUpdateControls.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumUpdateControls.vi"/>
 			<Item Name="TextControlledInstrumWriteCommands.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumWriteCommands.vi"/>
+			<Item Name="TreeControlLib.lvlib" Type="Library" URL="../../../lib/UI/TreeControl/TreeControlLib.lvlib"/>
 			<Item Name="tutorial-062_FromDLAY.vi" Type="VI" URL="../../../lib/Hardware/image4md/tutorial-062_FromDLAY.vi"/>
 			<Item Name="tutorial-062_ToDLAY.vi" Type="VI" URL="../../../lib/Hardware/image4md/tutorial-062_ToDLAY.vi"/>
 			<Item Name="VariantArrayAccess.vi" Type="VI" URL="../../../lib/Variant/VariantArrayAccess.vi"/>
@@ -474,8 +451,11 @@
 			<Item Name="VariantClusterAccess.vi" Type="VI" URL="../../../lib/Variant/VariantClusterAccess.vi"/>
 			<Item Name="VariantClusterAccessMulti.vi" Type="VI" URL="../../../lib/Variant/VariantClusterAccessMulti.vi"/>
 			<Item Name="VariantClusterToArrayOfValues.vi" Type="VI" URL="../../../lib/Variant/VariantClusterToArrayOfValues.vi"/>
+			<Item Name="VINameEscape.vi" Type="VI" URL="../../../lib/SetGetControlValue/VINameEscape.vi"/>
 			<Item Name="VINameToControls.vi" Type="VI" URL="../../../lib/SetGetControlValue/VINameToControls.vi"/>
 			<Item Name="VINameToVI.vi" Type="VI" URL="../../../lib/SetGetControlValue/VINameToVI.vi"/>
+			<Item Name="VINameUnescape.vi" Type="VI" URL="../../../lib/SetGetControlValue/VINameUnescape.vi"/>
+			<Item Name="VIPropertyPicker.lvlib" Type="Library" URL="../../VIPropertyPicker/VIPropertyPicker.lvlib"/>
 			<Item Name="VISAWriteWithEchoback.vi" Type="VI" URL="../../../lib/Hardware/VISAWriteWithEchoback.vi"/>
 			<Item Name="ws_runtime.dll" Type="Document" URL="ws_runtime.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
