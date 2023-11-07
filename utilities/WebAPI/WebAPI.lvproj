@@ -42,12 +42,8 @@
 			<Item Name="TectronixDPO4000OscilloScope.vi" Type="VI" URL="../../../hardware/TectronixDPO4000OscilloScope.vi"/>
 		</Item>
 		<Item Name="lib" Type="Folder">
-			<Item Name="GetControlValue.vi" Type="VI" URL="../../../lib/SetGetControlValue/GetControlValue.vi"/>
 			<Item Name="GetControlValueHTTP.vi" Type="VI" URL="../GetControlValueHTTP.vi"/>
-			<Item Name="GetControlValues.vi" Type="VI" URL="../../../lib/SetGetControlValue/GetControlValues.vi"/>
-			<Item Name="SetControlValue.vi" Type="VI" URL="../../../lib/SetGetControlValue/SetControlValue.vi"/>
 			<Item Name="SetControlValueHTTP.vi" Type="VI" URL="../SetControlValueHTTP.vi"/>
-			<Item Name="SetControlValues.vi" Type="VI" URL="../../../lib/SetGetControlValue/SetControlValues.vi"/>
 		</Item>
 		<Item Name="test" Type="Folder">
 			<Item Name="test-runner" Type="Folder">
@@ -389,30 +385,18 @@
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
 			<Item Name="AssertSubtexts.vi" Type="VI" URL="../../../lib/String/AssertSubtexts.vi"/>
-			<Item Name="ChildControlsInCluster.vi" Type="VI" URL="../../../lib/SetGetControlValue/ChildControlsInCluster.vi"/>
 			<Item Name="CoerseNumericType.vi" Type="VI" URL="../../../lib/Variant/CoerseNumericType.vi"/>
 			<Item Name="CoerseNumericTypeFixedPoint.vi" Type="VI" URL="../../../lib/Variant/CoerseNumericTypeFixedPoint.vi"/>
-			<Item Name="ControlNameEscape.vi" Type="VI" URL="../../../lib/SetGetControlValue/ControlNameEscape.vi"/>
-			<Item Name="ControlNameUnescape.vi" Type="VI" URL="../../../lib/SetGetControlValue/ControlNameUnescape.vi"/>
-			<Item Name="ControlValueArrayToJSON.vi" Type="VI" URL="../../../lib/SetGetControlValue/ControlValueArrayToJSON.vi"/>
-			<Item Name="ControlValueToJSON.vi" Type="VI" URL="../../../lib/SetGetControlValue/ControlValueToJSON.vi"/>
 			<Item Name="DeferPanelUpdate.vi" Type="VI" URL="../../../lib/UI/DeferPanelUpdate.vi"/>
-			<Item Name="EnumApplications.vi" Type="VI" URL="../../../lib/SetGetControlValue/EnumApplications.vi"/>
 			<Item Name="FileMultipleBackup.vi" Type="VI" URL="../../../lib/File/FileMultipleBackup.vi"/>
-			<Item Name="FlattenPageSelecter.vi" Type="VI" URL="../../../lib/SetGetControlValue/FlattenPageSelecter.vi"/>
-			<Item Name="GetControlValuesDisplayName.vi" Type="VI" URL="../../../lib/SetGetControlValue/GetControlValuesDisplayName.vi"/>
 			<Item Name="InsertMenuItemsWithShortcut.vi" Type="VI" URL="../../../lib/UI/InsertMenuItemsWithShortcut.vi"/>
 			<Item Name="JSONObjectToMap.vi" Type="VI" URL="../../../lib/String/JSON/JSONObjectToMap.vi"/>
-			<Item Name="JSONtoArrayValue.vi" Type="VI" URL="../../../lib/SetGetControlValue/JSONtoArrayValue.vi"/>
-			<Item Name="JSONtoControlValue.vi" Type="VI" URL="../../../lib/SetGetControlValue/JSONtoControlValue.vi"/>
-			<Item Name="JSONtoControlValueCore.vi" Type="VI" URL="../../../lib/SetGetControlValue/JSONtoControlValueCore.vi"/>
 			<Item Name="ListControlNames.vi" Type="VI" URL="../../ParameterSweeper/ListControlNames.vi"/>
 			<Item Name="LogToStringControl.vi" Type="VI" URL="../../../lib/UI/LogToStringControl.vi"/>
 			<Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="ParameterSweepCore.vi" Type="VI" URL="../../ParameterSweeper/ParameterSweepCore.vi"/>
-			<Item Name="ParseControlPath.vi" Type="VI" URL="../../../lib/SetGetControlValue/ParseControlPath.vi"/>
 			<Item Name="ParseJSON.vi" Type="VI" URL="../../../lib/String/JSON/ParseJSON.vi"/>
 			<Item Name="ParseJSONObjectKey.vi" Type="VI" URL="../../../lib/String/JSON/ParseJSONObjectKey.vi"/>
 			<Item Name="ParseJSONString.vi" Type="VI" URL="../../../lib/String/JSON/ParseJSONString.vi"/>
@@ -421,8 +405,8 @@
 			<Item Name="SequentialFileName.vi" Type="VI" URL="../../../lib/File/SequentialFileName.vi"/>
 			<Item Name="SerialPortSetup.vi" Type="VI" URL="../../../lib/Hardware/SerialPortSetup.vi"/>
 			<Item Name="SetFrontPanelSize.vi" Type="VI" URL="../../../lib/UI/SetFrontPanelSize.vi"/>
+			<Item Name="SetGetControlValue.lvlib" Type="Library" URL="../../../lib/SetGetControlValue/SetGetControlValue.lvlib"/>
 			<Item Name="SlippyInterval.vi" Type="VI" URL="../../ParameterSweeper/SlippyInterval.vi"/>
-			<Item Name="SplitControlPath.vi" Type="VI" URL="../../../lib/SetGetControlValue/SplitControlPath.vi"/>
 			<Item Name="StanfordResSysDG645DelayGeneratorFromDLAY.vi" Type="VI" URL="../../../hardware/StanfordResSysDG645DelayGeneratorFromDLAY.vi"/>
 			<Item Name="StanfordResSysDG645DelayGeneratorToDLAY.vi" Type="VI" URL="../../../hardware/StanfordResSysDG645DelayGeneratorToDLAY.vi"/>
 			<Item Name="StringArrayIntersection.vi" Type="VI" URL="../../../lib/String/StringArrayIntersection.vi"/>
@@ -431,16 +415,7 @@
 			<Item Name="StringToComplexNumber.vi" Type="VI" URL="../../../lib/String/StringToComplexNumber.vi"/>
 			<Item Name="StringToJSON.vi" Type="VI" URL="../../../lib/String/JSON/StringToJSON.vi"/>
 			<Item Name="test-runnee.vi" Type="VI" URL="../../../test/test-runnee.vi"/>
-			<Item Name="TextControlledInstrumControlChanged.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumControlChanged.vi"/>
-			<Item Name="TextControlledInstrumControlToCommand.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumControlToCommand.vi"/>
-			<Item Name="TextControlledInstrumControlToCommandMulti.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrum/TextControlledInstrumControlToCommandMulti.vi"/>
-			<Item Name="TextControlledInstrumControlToCommandMultiSub.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrum/TextControlledInstrumControlToCommandMultiSub.vi"/>
-			<Item Name="TextControlledInstrumControlToCommandSingle.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrum/TextControlledInstrumControlToCommandSingle.vi"/>
-			<Item Name="TextControlledInstrumIOQueuePacket.ctl" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumIOQueuePacket.ctl"/>
-			<Item Name="TextControlledInstrumMakeControlMap.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumMakeControlMap.vi"/>
-			<Item Name="TextControlledInstrumReadCommand.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumReadCommand.vi"/>
-			<Item Name="TextControlledInstrumUpdateControls.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumUpdateControls.vi"/>
-			<Item Name="TextControlledInstrumWriteCommands.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumWriteCommands.vi"/>
+			<Item Name="TextControlledInstrum.lvlib" Type="Library" URL="../../../lib/Hardware/TextControlledInstrum/TextControlledInstrum.lvlib"/>
 			<Item Name="TreeControlLib.lvlib" Type="Library" URL="../../../lib/UI/TreeControl/TreeControlLib.lvlib"/>
 			<Item Name="tutorial-062_FromDLAY.vi" Type="VI" URL="../../../lib/Hardware/image4md/tutorial-062_FromDLAY.vi"/>
 			<Item Name="tutorial-062_ToDLAY.vi" Type="VI" URL="../../../lib/Hardware/image4md/tutorial-062_ToDLAY.vi"/>
@@ -450,10 +425,6 @@
 			<Item Name="VariantClusterAccess.vi" Type="VI" URL="../../../lib/Variant/VariantClusterAccess.vi"/>
 			<Item Name="VariantClusterAccessMulti.vi" Type="VI" URL="../../../lib/Variant/VariantClusterAccessMulti.vi"/>
 			<Item Name="VariantClusterToArrayOfValues.vi" Type="VI" URL="../../../lib/Variant/VariantClusterToArrayOfValues.vi"/>
-			<Item Name="VINameEscape.vi" Type="VI" URL="../../../lib/SetGetControlValue/VINameEscape.vi"/>
-			<Item Name="VINameToControls.vi" Type="VI" URL="../../../lib/SetGetControlValue/VINameToControls.vi"/>
-			<Item Name="VINameToVI.vi" Type="VI" URL="../../../lib/SetGetControlValue/VINameToVI.vi"/>
-			<Item Name="VINameUnescape.vi" Type="VI" URL="../../../lib/SetGetControlValue/VINameUnescape.vi"/>
 			<Item Name="VIPropertyPicker.lvlib" Type="Library" URL="../../VIPropertyPicker/VIPropertyPicker.lvlib"/>
 			<Item Name="VISAWriteWithEchoback.vi" Type="VI" URL="../../../lib/Hardware/VISAWriteWithEchoback.vi"/>
 			<Item Name="ws_runtime.dll" Type="Document" URL="ws_runtime.dll">

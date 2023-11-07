@@ -7,15 +7,16 @@ lib/Hardware/TextControlledInstrum
 - [lib/Hardware/TextControlledInstrum](#libhardwaretextcontrolledinstrum)
   - [目次](#目次)
   - [概要](#概要)
+  - [注意](#注意)
   - [チュートリアル](#チュートリアル)
   - [使用例１：](#使用例１)
-  - [TextControlledInstrumControlToCommand.vi](#textcontrolledinstrumcontroltocommandvi)
-  - [TextControlledInstrumUpdateControls.vi](#textcontrolledinstrumupdatecontrolsvi)
-  - [TextControlledInstrumControlChanged.vi](#textcontrolledinstrumcontrolchangedvi)
-  - [TextControlledInstrumIOQueuePacket.ctl](#textcontrolledinstrumioqueuepacketctl)
-  - [TextControlledInstrumWriteCommands.vi](#textcontrolledinstrumwritecommandsvi)
-  - [TextControlledInstrumReadCommand.vi](#textcontrolledinstrumreadcommandvi)
-  - [TextControlledInstrumMakeControlMap.ctl](#textcontrolledinstrummakecontrolmapctl)
+  - [ControlToCommand.vi](#controltocommandvi)
+  - [UpdateControls.vi](#updatecontrolsvi)
+  - [ControlChanged.vi](#controlchangedvi)
+  - [IOQueuePacket.ctl](#ioqueuepacketctl)
+  - [WriteCommands.vi](#writecommandsvi)
+  - [ReadCommand.vi](#readcommandvi)
+  - [MakeControlMap.ctl](#makecontrolmapctl)
   - [使用例２: `SignalRecovery7280Lock-inAmp.vi`](#使用例２-signalrecovery7280lock-inampvi)
 
 概要
@@ -32,6 +33,12 @@ lib/Hardware/TextControlledInstrum
 本ライブラリを使うことでこのような制御プログラムの作成を楽に行える
 
 ![](../../hardware/image4md/panel-SignalRecovery7280.png)
+
+注意
+--
+以前このライブラリは `.lvlib` の使い方を知らないまま、すべての `.vi` に `TextControlledInstrum` というプレフィックスを付けていたため、例えば `ControlToCommand.vi` は `TextControlledInstrumControlToCommand.vi` などという非常に長ったらしい名前になっていました。
+
+今は `TextControlledInstrum.lvlib:ControlToCommand.vi` なのですがドキュメントの画像の中には旧名で掲載されているものも多くあります。あしからずご注意ください。
 
 チュートリアル
 --
@@ -59,13 +66,13 @@ lib/Hardware/TextControlledInstrum
 
 これを作るのに主に使用されるのは次の３つの VI と１つの構造体になります
 
-- `ControlToCommand.vi` : (本名は `TextControlledInstrumControlToCommand.vi`)
+- `ControlToCommand.vi`
   - コントロールリファレンスとコマンドのリストを受け取って事前準備を行う
-- `UpdateControls.vi` : (本名は `TextControlledInstrumUpdateControls.vi`)
+- `UpdateControls.vi`
   - 機器からパラメータを読みだしてすべてのコントロールの値を更新する
-- `ControlChanged.vi` : (本名は `TextControlledInstrumControlChanged.vi`)
+- `ControlChanged.vi`
   - ユーザーにより変更されたコントロール値を機器に送る
-- `IOQueuePacket.ctl` : (本名は `TextControlledInstrumIOQueuePacket.ctl`)
+- `IOQueuePacket.ctl`
   - 通信要求をやり取りする `Queue` のパケットとなる構造体の型定義
 
 
@@ -161,7 +168,7 @@ lib/Hardware/TextControlledInstrum
 
 `IO Queue` を簡便に利用するため、`WriteCommands.vi` と `ReadCommand.vi` が用意されている。
 
-TextControlledInstrumControlToCommand.vi
+ControlToCommand.vi
 --
 
 コントロールとコマンドのリストを与えて前処理を行う。
@@ -184,7 +191,7 @@ TextControlledInstrumControlToCommand.vi
 - 出力値の意味は深く考えず、そのまま `UpdateControls.vi` や `ControlChanged.vi` に繋げばよい
 - 詳しい使い方は使用例１、使用例２を参照のこと
 
-TextControlledInstrumUpdateControls.vi
+UpdateControls.vi
 --
 
 すべてのパラメータについて機器から値を読み出し画面上のコントロールを更新する。
@@ -196,7 +203,7 @@ TextControlledInstrumUpdateControls.vi
 - `timed out?` : タイムアウトがあれば `true` になる
 - `IO Queue` : 送受信要求を送る `Queue` を指定する
 
-TextControlledInstrumControlChanged.vi
+ControlChanged.vi
 --
 
 コントロールの値が変更されたらハードウェア機器へ書き込みを行う。
@@ -224,7 +231,7 @@ TextControlledInstrumControlChanged.vi
   - この値を読むとすべての処理が終わったことを検出できるので、パラメータ項目の更新が終わったタイミングで別処理、例えばパラメータに従属する表示器の計算などを行いたければそこでするとよい
 
 
-TextControlledInstrumIOQueuePacket.ctl
+IOQueuePacket.ctl
 --
 
 `IO Queue` を作成するには子の構造体を与えて `Obtain Queue` を呼ぶことになる
@@ -243,7 +250,7 @@ TextControlledInstrumIOQueuePacket.ctl
 - ライブラリのユーザーが `Operation` を拡張する場合には 8 以上の数値を使うことが望ましい
 - これは将来ライブラリのアップデートで 3~7 の値のいくつかがライブラリ内で用いられる可能性があるためである
 
-TextControlledInstrumWriteCommands.vi
+WriteCommands.vi
 --
 
 `IO Queue` へ書き込みコマンド（複数可）を送信する
@@ -262,9 +269,9 @@ TextControlledInstrumWriteCommands.vi
 - `timed out?` : タイムアウトがあったかどうか
   - 途中でタイムアウトがあればそれ以降のコマンド送信はキャンセルされる
 
-`TextControlledInstrumControlChangedSub.vi` の中でも使われている
+`ControlChangedSub.vi` の中でも使われている
 
-TextControlledInstrumReadCommand.vi
+ReadCommand.vi
 --
 
 `IO Queue` へ読み出しコマンドを１つ送信して結果を得る
@@ -277,9 +284,9 @@ TextControlledInstrumReadCommand.vi
 - `Received` : 読みだされた値が返る
 - `timed out?` : タイムアウトがあったかどうか
 
-`TextControlledInstrumUpdateControlsSub.vi` の中でも使われている
+`UpdateControlsSub.vi` の中でも使われている
 
-TextControlledInstrumMakeControlMap.ctl
+MakeControlMap.ctl
 --
 
 コントロールリファレンスの配列を与えると以下を出力する

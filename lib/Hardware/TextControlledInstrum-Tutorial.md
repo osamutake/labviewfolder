@@ -6,6 +6,7 @@ Tutorial of TextControlledInstrum
 ここでは Stanford Research Systems のパルスジェネレータ DG645 の制御プログラムを作る手順を示すことでこのライブラリのチュートリアルとします。
 
 - [Tutorial of TextControlledInstrum](#tutorial-of-textcontrolledinstrum)
+  - [注意](#注意)
   - [LAN 接続による制御の基本](#lan-接続による制御の基本)
     - [パラメータの読み出し](#パラメータの読み出し)
     - [パラメータの書き込み](#パラメータの書き込み)
@@ -37,6 +38,12 @@ Tutorial of TextControlledInstrum
     - [読み出し処理](#読み出し処理-1)
     - [書き込み処理](#書き込み処理-1)
   - [まとめ](#まとめ)
+
+注意
+--
+以前このライブラリは `.lvlib` の使い方を知らないまま、すべての `.vi` に `TextControlledInstrum` というプレフィックスを付けていたため、例えば `ControlToCommand.vi` は `TextControlledInstrumControlToCommand.vi` などという非常に長ったらしい名前になっていました。
+
+今は `TextControlledInstrum.lvlib:ControlToCommand.vi` なのですがドキュメントの画像の中には旧名で掲載されているものも多くあります。あしからずご注意ください。
 
 LAN 接続による制御の基本
 --
@@ -177,8 +184,8 @@ TextControlledInstrum ライブラリを使う
   - `%g` : 読み出し結果の解釈のための `sscanf` テンプレート
 - ３行目の最後に改行が入っていることを確認
   - ４行目の先頭までキャレットを動かせる状態
-- `TextControlledInstrumControlToCommand.vi` を置く
-- `TextControlledInstrumUpdateControls.vi` を置く
+- `ControlToCommand.vi` を置く
+- `UpdateControls.vi` を置く
 - 図のように接続する
 
 ![](image4md/tutorial-001.png)
@@ -191,7 +198,7 @@ TextControlledInstrum ライブラリを使う
 
 この送信依頼を受け取って適切に処理するために `IO Queue` を作成し、送られた依頼を処理する必要があります。
 
-- `TextControlledInstrumIOQueuePacket.ctl` を置く
+- `IOQueuePacket.ctl` を置く
 - `Obtain Queue` を置く
   - `Synchronization` - `Queue Operations` にあります
 
@@ -321,7 +328,7 @@ TextControlledInstrum ライブラリを使う
 
 値の書き込みを行うには、コントロールの値が変更されたことを検出して、対応する書き込みコマンドを送ることになります。
 
-コントロールの値が変更されると `Value Chang` イベントは発生するので、それをイベントストラクチャで判別して `TextControlledInstrumControlChanged.vi` を呼べばその処理を行えます。
+コントロールの値が変更されると `Value Chang` イベントは発生するので、それをイベントストラクチャで判別して `ControlChanged.vi` を呼べばその処理を行えます。
 
 - イベントストラクチャの枠上で右クリックから `Add Event Case...` を選択
 - 中央の `Event Sources` で `AB Amplitude (V)` を選択
@@ -340,7 +347,7 @@ TextControlledInstrum ライブラリを使う
   - `CtlRef` : どのコントロールが変更されたかを表すコントロールリファレンス
   - `OldVal` : 変更前の値
   - `NewVal` : 変更後の値
-- `TextControlledInstrumControlChanged.vi` を置く
+- `ControlChanged.vi` を置く
 - 図のように配線
 
 ![](image4md/tutorial-020.png)
@@ -689,7 +696,7 @@ DG645 の A エッジの遅延を設定するコマンドは、`DLAY 2,0,1e-6` �
   - コントロールリファレンスの配列などをうまく使えばある程度は可能かもしれません
 - 制御したいコントロールがクラスタのサブコントロールである場合に対応が難しい
 
-`TextControlledInstrum` ライブラリは上記のような問題を解決するのに役立てるため `TextControlledInstrumMakeControlMap.vi` という VI を提供しています。
+`TextControlledInstrum` ライブラリは上記のような問題を解決するのに役立てるため `MakeControlMap.vi` という VI を提供しています。
 
 ### コントロール配列への追加
 
@@ -765,7 +772,7 @@ DG645 の A エッジの遅延を設定するコマンドは、`DLAY 2,0,1e-6` �
 
 ### MakeControlMap.vi について
 
-`TextControlledInstrumMakeControlMap.vi` はコントロールリファレンスの配列を入れると
+`MakeControlMap.vi` はコントロールリファレンスの配列を入れると
 
 - コントロールリファレンスの配列
 - コントロール名の配列
