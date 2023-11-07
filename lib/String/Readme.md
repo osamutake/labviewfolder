@@ -14,6 +14,8 @@ Lib/String
   - 要素が多い場合には StringArrayToSet.vi で Set にしてから Intersection し、もう一度配列にする方が速そう
 - StringArrayToSet.vi
   - 文字列配列を文字列Setに変換するだけ
+- StringBeginWith.vi
+  - 文字列が指定の文字列から始まっているかどうかを調べる
 - StringToComplexNumber.vi
   - `"1.23+13i"` のような文字列を複素数値(CEXT)に変換する
   - 恐らく標準では提供されていない？

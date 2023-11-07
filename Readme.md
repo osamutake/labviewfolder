@@ -37,12 +37,14 @@
     - `AssertSubTexts.vi` : 文字列の指定位置に候補文字列のうちどれかが現れることを確認
     - `StringArrayIntersection.vi` : ２つの文字列配列に共通して現れる文字列だけを含めた配列を返す
     - `StringArrayToSet.vi` : 文字列配列を文字列Setに変換
+    - `StringBeginWith.vi` : 文字列が指定の文字列から開始することを確かめる
     - `StringToComplexNumber.vi` : `"1.23+13i"` のような文字列を複素数値(CEXT)に変換する
   - [`lib/UI/`](lib/UI) UI 関連
     - `DeferPanelUpdate.vi` : コントロールの値を変更する間 VI の表示更新を止める
-    - `InsertMenubarItem.vi` : VI のメニューバーに新しい項目を追加する
+    - `InsertMenuItemsWithShortcut.vi` : メニューにショートカット付きの項目を追加する
     - `LogToStringControl.vi` : ログテキストを文字列コントロールに追加する
-    - `SetFrontPanelSize.vi` : VI のフロントパネルサイズを変更する
+    - `SetFrontPanelSize.vi` : VI のフロントパネルサイズ・位置を変更する
+    - `TreeView` : `TreeView` の操作を行う
   - [`lib/Variant/`](lib/Variant) `Variant` 関連
     - `CoerseNumericType.vi` : 数値を `Variant` で指定された型に変換する
     - `VariantArrayAccess.vi` : `Variant` に格納された配列の要素を読み書きする
@@ -52,7 +54,8 @@
   - `RaiseErrorIf.vi` : `true` が入力されるとエラーを発生する
 - [`utilities/`](utilities/) 単独で利用するVIアプリ
   - `ParameterSweeper.vi` : 任意の VI の任意のコントロールの値をゆっくりと掃引する
-  - `SettingManager.vi` : 複数の VI にわたる多数のコントロール値を「設定」として保存・復帰する
+  - `ScriptManager.vi` : コントロール値や VI 属性を設定するスクリプトを編集・保管・実行するプログラム
+  - `VIPropertyPicker.vi` : コントロール値や VI 属性を設定するスクリプトの作成を助けるプログラム
 
 GitHub アドレス
 --
@@ -223,3 +226,16 @@ LabVIEW メタプログラミングの勧め
       - 配列コントロールを適切に追加するようにした
   - `DACSinglePoint.vi` の値を制御する配列コントロールの名前を Values に改名した
   	- 長いと `ParameterSweeper.vi` で指定しづらいため
+- 2023-11-07
+  - `SetControlValues.vi` で疑似コントロールを使った VI 操作を行えるようにした
+  - VI のコントロール値を読取り、保存・復帰する `SettingManager.vi` を削除した
+    - 代わりにコントロール値を読取る `VIPropertyPicker.vi` と 
+    - 保存・復帰を行う`ScriptManager.vi` を追加した
+  - `TreeView` の操作を行う `lib/UI/TreeView` ライブラリを追加した
+  - `lib/String/StringBeginWith.vi` を追加した
+  - `lib/SetGetControlValue` の `ControlValueToJSON.vi`, `JSONtoControlValueCore.vi` で
+    - `IOName` の読み書きに対応した
+    - `VISA Refnum` の読み書きを改良した
+  - `lib/SetGetControlValue` で `VIName` の `Escape` は `@` と `|` だけにした
+  - `InsertMenubarItem.vi` は `InsertMenuItemsWithShortcut.vi` として１段だけの動作にした
+  - `SetFrontPanelSize.vi` で位置も設定できるようにした
