@@ -9,4 +9,6 @@
 	<Item Name="DragDropMoveCopyIsAcceptable.vi" Type="VI" URL="../DragDropMoveCopyIsAcceptable.vi"/>
 	<Item Name="GetChildren.vi" Type="VI" URL="../GetChildren.vi"/>
 	<Item Name="GetParent.vi" Type="VI" URL="../GetParent.vi"/>
+	<Item Name="RestoreState.vi" Type="VI" URL="../RestoreState.vi"/>
+	<Item Name="SaveState.vi" Type="VI" URL="../SaveState.vi"/>
 </Library>

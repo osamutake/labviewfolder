@@ -8,8 +8,6 @@
 	<Item Name="PropertyListCheckSelection.vi" Type="VI" URL="../PropertyListCheckSelection.vi"/>
 	<Item Name="PropertyListToScript.vi" Type="VI" URL="../PropertyListToScript.vi"/>
 	<Item Name="TreeViewAddItemIndent.vi" Type="VI" URL="../TreeViewAddItemIndent.vi"/>
-	<Item Name="TreeViewRestoreState.vi" Type="VI" URL="../TreeViewRestoreState.vi"/>
-	<Item Name="TreeViewSaveState.vi" Type="VI" URL="../TreeViewSaveState.vi"/>
 	<Item Name="VIListReload.vi" Type="VI" URL="../VIListReload.vi"/>
 	<Item Name="VIListReloadEnumVIs.vi" Type="VI" URL="../VIListReloadEnumVIs.vi"/>
 </Library>
