@@ -69,7 +69,6 @@ https://github.com/osamutake/labviewfolder
   - [ライセンス](#ライセンス)
   - [LabVIEW メタプログラミングの勧め](#labview-メタプログラミングの勧め)
   - [改訂履歴](#改訂履歴)
-  - [TODO](#todo)
 
 古い LabView 用に保存したバージョンも用意しました
 
@@ -250,8 +249,6 @@ LabVIEW メタプログラミングの勧め
   - `lib/SetGetControlValue` で `VIName` の `Escape` は `@` と `|` だけにした
   - `InsertMenubarItem.vi` は `InsertMenuItemsWithShortcut.vi` として１段だけの動作にした
   - `SetFrontPanelSize.vi` で位置も設定できるようにした
+  - `TextControlledInstrum` を `.lvlib` 化して VI 名を短くした
+  - `SetGetControlValue` も `.lvlib` 化した
 
-TODO
---
-
-`TextControlledInstrum` を `.lvlib` 化して VI 名を短くしよう。
