@@ -265,4 +265,4 @@ LabVIEW メタプログラミングの勧め
     - `/run` がすでに `Running` だとエラーを生じていたのを直した
   - `SetControlValue`, `GetControlValue`, `GetControlValues` で `VI Reference` を `Close` するようにした
   - `SaveProjectForPreviousVersion.vi` を追加
-  
+  - `TreeViewStore/Restore` を `lib/UI/TreeControl/SaveState, RestoreState` に移した

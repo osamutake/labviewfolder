@@ -8,10 +8,12 @@ UI 関連のライブラリ。
   - [InsertMenuItemsWithShortcut.vi](#insertmenuitemswithshortcutvi)
   - [LogToStringControl.vi](#logtostringcontrolvi)
   - [SetFrontPanelSize.vi](#setfrontpanelsizevi)
-  - [TreeView](#treeview)
+  - [TreeControl](#treecontrol)
     - [CopyItem.vi](#copyitemvi)
     - [DragDropCustomize.vi](#dragdropcustomizevi)
     - [DragDropMoveCopy.vi](#dragdropmovecopyvi)
+    - [SaveState.vi](#savestatevi)
+    - [RestoreState.vi](#restorestatevi)
     - [GetChildren.vi](#getchildrenvi)
     - [GetParent.vi](#getparentvi)
 
@@ -118,10 +120,10 @@ VI のフロントパネルサイズを変更する
   - 正の値なら増やす、負の値なら減らす
 - `VI Reference out` : VI のリファレンスがそのまま出る
 
-TreeView
+TreeControl
 --
 
-`TreeView` を扱うためのユーティリティ VI を提供する
+`TreeControl` を扱うためのユーティリティ VI を提供する
 
 ### CopyItem.vi
 
@@ -138,12 +140,16 @@ TreeView
 ### DragDropCustomize.vi
 ### DragDropMoveCopy.vi
 
-`TreeView` 内のアイテムのドラッグドロップを詳細にせぎょできるようにする
+`TreeControl` 内のアイテムのドラッグドロップを詳細にせぎょできるようにする
 
 - シンボルごとに親子関係を作成可能かどうかを指定できる
 
 [`utilities/ScriptManager.vi`](../../utilities/ScriptManager.vi) が使用例になっている
 
+### SaveState.vi
+### RestoreState.vi
+
+選択状態、フォーカス、オープン状態、Defer Update 等の状態を保存・復帰する
 
 ### GetChildren.vi
 
