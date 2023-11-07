@@ -237,8 +237,10 @@ LabVIEW メタプログラミングの勧め
       - 配列コントロールを適切に追加するようにした
   - `DACSinglePoint.vi` の値を制御する配列コントロールの名前を Values に改名した
   	- 長いと `ParameterSweeper.vi` で指定しづらいため
-- 2023-11-07
-  - `SetControlValues.vi` で疑似コントロールを使った VI 操作を行えるようにした
+- 2023-11-08
+  - `SetControlValues.vi`
+    - 疑似コントロールを使った VI 操作を行えるようにした
+    - 頭に改行が入っているとエラーになっていたのを直した
   - VI のコントロール値を読取り、保存・復帰する `SettingManager.vi` を削除した
     - 代わりにコントロール値を読取る `VIPropertyPicker.vi` と 
     - 保存・復帰を行う`ScriptManager.vi` を追加した
@@ -252,17 +254,5 @@ LabVIEW メタプログラミングの勧め
   - `SetFrontPanelSize.vi` で位置も設定できるようにした
   - `TextControlledInstrum` を `.lvlib` 化して VI 名を短くした
   - `SetGetControlValue` も `.lvlib` 化した
-  - `VIPropertyPicker` 
-    - リロード機能が実装されていなかったので実装した
-    - ショートカットキーは `F5` ではなく `Ctrl+R` とした
-  - `ScriptManager`
-    - `AppendScript` で `Store Undo Entry` が2回呼ばれていたのを直した
-    - `AppendScript` で自身を前面に出すようにした
-    - `AppendScript` で空行が正しく入らないときがあったのを直した
-    - 初回の `Load` で `editor refs` が未定義だったのを直した
-  - `SetControlValues` で
-    - 頭に改行が入っているとエラーになっていたのを直した
-    - `/run` がすでに `Running` だとエラーを生じていたのを直した
-  - `SetControlValue`, `GetControlValue`, `GetControlValues` で `VI Reference` を `Close` するようにした
+  - `SetControlValue`, `SetControlValues`, `GetControlValue`, `GetControlValues` で `VI Reference` を `Close` するようにした
   - `SaveProjectForPreviousVersion.vi` を追加
-  
