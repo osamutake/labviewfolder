@@ -266,3 +266,5 @@ LabVIEW メタプログラミングの勧め
   - `SetControlValue`, `GetControlValue`, `GetControlValues` で `VI Reference` を `Close` するようにした
   - `SaveProjectForPreviousVersion.vi` を追加
   - `TreeViewStore/Restore` を `lib/UI/TreeControl/SaveState, RestoreState` に移した
+- 2023-11-08
+  - `ScriptManager` に `Duplicate` メニューを実装
