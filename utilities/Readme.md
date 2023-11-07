@@ -73,14 +73,17 @@ VIPropertyPicker.vi
 ![](image4md/panel-VIPropertyPicker.png)
 
 - 起動すると右上の `VI List` に現在開かれている `VI` の一覧が表示される
+  - リロードするには `Ctrl+R`
 - いずれかを選択すると左側の `VI Properties` に `VI` 上のコントロールの一覧が表示される
+  - リロードするには `Ctrl+R`
   - 上部の ◆ 付きのものは `VI` の表示位置や実行状態を変更するためのコマンド
-- コントロールあるいはコマンドを `Ctrl+Click` で選択すると右下にそれらを設定するためのスクリプトが表示される
+- コントロールやコマンドを `Ctrl+Click` で選択すると右下にそれらを設定するためのスクリプトが表示される
 - このスクリプトをコピー＆ペーストするか、`Append to Editor in ScriptManger` ボタンで `ScriptManger` に送ることで利用する
 - コマンド一覧
   - `/load` : `VI` を読み込みフロントパネルを開く
   - `/front` : `VI` を読み込み最前面に表示
   - `/run` : `VI` を読み込み実行する
+  - `/call` : `VI` を読み込み実行し終了を待つ
   - `/stop` : `VI` を読み込み実行中であれば停止
   - `/state` : `Standard`, `Maximize`, `Minimize`, `Close` を代入して表示状態を変更
   - `/position` : `[12,34]` の形でフロントパネル位置を指定

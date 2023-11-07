@@ -43,6 +43,7 @@
 		</Item>
 		<Item Name="lib" Type="Folder">
 			<Item Name="GetControlValueHTTP.vi" Type="VI" URL="../GetControlValueHTTP.vi"/>
+			<Item Name="SaveProjectForPreviousVersion.vi" Type="VI" URL="../../../lib/File/SaveProjectForPreviousVersion.vi"/>
 			<Item Name="SetControlValueHTTP.vi" Type="VI" URL="../SetControlValueHTTP.vi"/>
 		</Item>
 		<Item Name="test" Type="Folder">

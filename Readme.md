@@ -17,6 +17,7 @@
 - [`lib/`](lib/) 汎用のサブ VI ライブラリ
   - [`lib/File/`](lib/File) ファイル関連
     - `FileMultipleBackup.vi` : 複数世代にわたるバックアップファイルを管理
+    - `SaveProjectForPreviousVersion.vi` : `.lvproj` ファイルを `Save for previous version` する
     - `SequentialFileName.vi` : 連番付きファイル名の番号を1増やす
   - [`lib/Hardware/`](lib/Hardware) ハードウェア関連
     - `TextControlledInstrum` : テキストコマンドで読取・設定可能なハードウェアを制御する [→チュートリアル](lib/Hardware/TextControlledInstrum-Tutorial.md)
@@ -69,7 +70,6 @@ https://github.com/osamutake/labviewfolder
   - [ライセンス](#ライセンス)
   - [LabVIEW メタプログラミングの勧め](#labview-メタプログラミングの勧め)
   - [改訂履歴](#改訂履歴)
-  - [TODO](#todo)
 
 古い LabView 用に保存したバージョンも用意しました
 
@@ -250,8 +250,19 @@ LabVIEW メタプログラミングの勧め
   - `lib/SetGetControlValue` で `VIName` の `Escape` は `@` と `|` だけにした
   - `InsertMenubarItem.vi` は `InsertMenuItemsWithShortcut.vi` として１段だけの動作にした
   - `SetFrontPanelSize.vi` で位置も設定できるようにした
-
-TODO
---
-
-`TextControlledInstrum` を `.lvlib` 化して VI 名を短くしよう。
+  - `TextControlledInstrum` を `.lvlib` 化して VI 名を短くした
+  - `SetGetControlValue` も `.lvlib` 化した
+  - `VIPropertyPicker` 
+    - リロード機能が実装されていなかったので実装した
+    - ショートカットキーは `F5` ではなく `Ctrl+R` とした
+  - `ScriptManager`
+    - `AppendScript` で `Store Undo Entry` が2回呼ばれていたのを直した
+    - `AppendScript` で自身を前面に出すようにした
+    - `AppendScript` で空行が正しく入らないときがあったのを直した
+    - 初回の `Load` で `editor refs` が未定義だったのを直した
+  - `SetControlValues` で
+    - 頭に改行が入っているとエラーになっていたのを直した
+    - `/run` がすでに `Running` だとエラーを生じていたのを直した
+  - `SetControlValue`, `GetControlValue`, `GetControlValues` で `VI Reference` を `Close` するようにした
+  - `SaveProjectForPreviousVersion.vi` を追加
+  
