@@ -431,16 +431,7 @@
 			<Item Name="StringToComplexNumber.vi" Type="VI" URL="../../../lib/String/StringToComplexNumber.vi"/>
 			<Item Name="StringToJSON.vi" Type="VI" URL="../../../lib/String/JSON/StringToJSON.vi"/>
 			<Item Name="test-runnee.vi" Type="VI" URL="../../../test/test-runnee.vi"/>
-			<Item Name="TextControlledInstrumControlChanged.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumControlChanged.vi"/>
-			<Item Name="TextControlledInstrumControlToCommand.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumControlToCommand.vi"/>
-			<Item Name="TextControlledInstrumControlToCommandMulti.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrum/TextControlledInstrumControlToCommandMulti.vi"/>
-			<Item Name="TextControlledInstrumControlToCommandMultiSub.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrum/TextControlledInstrumControlToCommandMultiSub.vi"/>
-			<Item Name="TextControlledInstrumControlToCommandSingle.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrum/TextControlledInstrumControlToCommandSingle.vi"/>
-			<Item Name="TextControlledInstrumIOQueuePacket.ctl" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumIOQueuePacket.ctl"/>
-			<Item Name="TextControlledInstrumMakeControlMap.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumMakeControlMap.vi"/>
-			<Item Name="TextControlledInstrumReadCommand.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumReadCommand.vi"/>
-			<Item Name="TextControlledInstrumUpdateControls.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumUpdateControls.vi"/>
-			<Item Name="TextControlledInstrumWriteCommands.vi" Type="VI" URL="../../../lib/Hardware/TextControlledInstrumWriteCommands.vi"/>
+			<Item Name="TextControlledInstrum.lvlib" Type="Library" URL="../../../lib/Hardware/TextControlledInstrum/TextControlledInstrum.lvlib"/>
 			<Item Name="TreeControlLib.lvlib" Type="Library" URL="../../../lib/UI/TreeControl/TreeControlLib.lvlib"/>
 			<Item Name="tutorial-062_FromDLAY.vi" Type="VI" URL="../../../lib/Hardware/image4md/tutorial-062_FromDLAY.vi"/>
 			<Item Name="tutorial-062_ToDLAY.vi" Type="VI" URL="../../../lib/Hardware/image4md/tutorial-062_ToDLAY.vi"/>
