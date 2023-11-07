@@ -4,16 +4,19 @@ Lib/UI
 UI 関連のライブラリ。
 
 - [Lib/UI](#libui)
-  - [提供される VI](#提供される-vi)
-    - [DeferPanelUpdate.vi](#deferpanelupdatevi)
-    - [InsertMenubarItem.vi](#insertmenubaritemvi)
-    - [LogToStringControl.vi](#logtostringcontrolvi)
-    - [SetFrontPanelSize.vi](#setfrontpanelsizevi)
+  - [DeferPanelUpdate.vi](#deferpanelupdatevi)
+  - [InsertMenuItemsWithShortcut.vi](#insertmenuitemswithshortcutvi)
+  - [LogToStringControl.vi](#logtostringcontrolvi)
+  - [SetFrontPanelSize.vi](#setfrontpanelsizevi)
+  - [TreeView](#treeview)
+    - [CopyItem.vi](#copyitemvi)
+    - [DragDropCustomize.vi](#dragdropcustomizevi)
+    - [DragDropMoveCopy.vi](#dragdropmovecopyvi)
+    - [GetChildren.vi](#getchildrenvi)
+    - [GetParent.vi](#getparentvi)
 
-提供される VI
+DeferPanelUpdate.vi
 --
-
-### DeferPanelUpdate.vi
 
 コントロールの値を変更する間 VI の表示更新を止めることで画面のちらつきを抑え、処理速度を向上する。
 
@@ -23,7 +26,8 @@ UI 関連のライブラリ。
 - 元の設定値が出てくるので、後でこの値を指定してもう一度呼ぶことで復帰できる
 - その間で本来なら画面更新を伴う値の更新を行う
 
-### InsertMenubarItem.vi
+InsertMenuItemsWithShortcut.vi
+--
 
 VI のメニューバーに新しい項目を追加する。
 
@@ -33,36 +37,39 @@ VI のメニューバーに新しい項目を追加する。
 
 そのためのコードはこんな感じ。
 
-![](image4md/example-InsertMenubarItem.png)
+![](image4md/example-InsertMenuItemsWithShortcut.png)
 
-- メニューテキストに `_` を含めると直後の文字がアクセスキーになる
-- `APP_SEPARATOR` という名前を指定するとセパレータになる
-- `Tools` メニューが先頭を `0` として `5` 番のメニューになるのでその直後に挿入するよう位置を指定している
-- メニューが選択されると `<This VI>` の `Menu Selection (User)` というイベントが発火する
-- `ItemTag` にメニューのタグが渡される
-- メニューのタグは他と重複しない限りはメニューテキストと同一だが、重複があると数字が追加される
-- ここでは念のためタグをメニュー名に直してからメニュー名で分岐するようにしている
+- まず通常の `Insert Menu Items` でメニューバーのルートに `VI Specific` という項目を作成する
+  - `Tools` メニューが先頭を `0` として `5` 番のメニューになるのでその直後に挿入するよう位置を指定している
+  - メニューテキストに `_` を含めると直後の文字がアクセスキーになる
+  - 挿入されたメニュー項目のタグが出力される
+  - メニューのタグは他と重複しない限りはメニューテキストと同一だが、重複があると数字が追加される
+- このタグを与えて `InsertMenuItemsWithShortcut.vi` を呼び出してサブ項目を追加している
+  - 名前とショートカットキーの配列は指定するためのテンプレートが `InsertMenuItemsWithShortcut.vi` のブロックダイアグラム上にあるのでそれを利用すると良い
+  - `APP_SEPARATOR` という名前を指定するとセパレータになる
+  - `Sub Item Tags` に挿入されたサブアイテムのタグが出力される
+  - メニューが選択されると `<This VI>` の `Menu Selection (User)` というイベントが発火する
+  - ここでは念のためタグをメニュー名に直してからメニュー名で分岐するようにしている
 
 VI の端子構成：
 
-![](image4md/pins-InsertMenubarItem.png)
+![](image4md/pins-InsertMenuItemsWithShortcut.png)
 
-- `menu ref` : `Current VI's Menubar` からのリファレンスを繋ぐ
-- `Menu Name` : Menubar に追加するトップ項目の名前を指定する
-  - `_` を含めると直後の文字がアクセスキーとなる（下線が追加されて、Alt + そのキーでメニュー項目にアクセス可能）
+- `menu ref` : メニューのリファレンスを繋ぐ
+- `Target Tag` : 挿入する先の項目を指定する
 - `Sub Items` : サブ項目の一覧を与える
   - 名前の他、ショートカットキーを指定できる
+  - 名前に `_` を含めるとアクセスキーを指定できる
   - ショートカットキーが必要なければ空白にしておけばよい
   - セパレータを追加するには名前として `APP_SEPARATOR` という文字を指定する
 - `Insert After (last)` : 先頭をゼロとして既存のメニュー項目番号を指定すると、新規の項目はその次に挿入される。先頭に入れたければ `-1` を指定する。項目数より大きい数字を入れれば末尾に追加される（デフォルト）。
 - `menu ref out` : メニューのリファレンスがそのまま出る
-- `Menu Tag` : トップメニューのタグ
-  - メニューのタグは基本的にはメニューの名前と同じ文字列だが、他のメニューと重複があった場合にはユニークな文字列にするため末尾に数値が追加される
 - `Sub Item Tags` : サブ項目のタグのリスト
 - `Sub Item Names` : サブ項目の名前のリスト
   - 上の例のようにメニューのタグを名前に直すのに使えるよう出力されている
 
-### LogToStringControl.vi
+LogToStringControl.vi
+--
 
 ログテキストを文字列コントロールに追加する。
 
@@ -85,11 +92,16 @@ VI の端子構成：
 - `Reduce By` : `Reduce Every` 回のログ追加ごとに `Reduce By` で指定された割合だけ古いログを削除する
   - デフォルトでは 100 回の追加ごとに古い方から２割のログを削除する
 
-### SetFrontPanelSize.vi
+SetFrontPanelSize.vi
+--
 
 VI のフロントパネルサイズを変更する
 
 幅のみ、高さのみを変更することもできる
+
+位置を指定することもできる
+
+相対値で指定することもできる
 
 ![](image4md/panel-SetFrontPanelSize.png)
 
@@ -98,4 +110,53 @@ VI のフロントパネルサイズを変更する
   - 何も繋がない、あるいは 0 を指定すると変更しない
 - `Height` : 幅を指定する
   - 何も繋がない、あるいは 0 を指定すると変更しない
+- `Left` : X 座標を指定する
+  - 何も繋がない、あるいは -32768 を指定すると変更しない
+- `Top` : Y 座標を指定する
+  - 何も繋がない、あるいは -32768 を指定すると変更しない
+- `Relative (F)` : 相対値での指定にする
+  - 正の値なら増やす、負の値なら減らす
 - `VI Reference out` : VI のリファレンスがそのまま出る
+
+TreeView
+--
+
+`TreeView` を扱うためのユーティリティ VI を提供する
+
+### CopyItem.vi
+
+`SourceTag` で指定されたアイテムを `ParentTag` の `Insert Index` へ複製する
+
+子アイテムも同時に複製される
+
+カラム番号の最大値はデフォルトで 10 になっているが、これよりも多い場合があるなら増やす必要がある
+
+複製されたアイテムの Tag が出力される
+
+![](image4md/panel-TreeViewCopyItem.png)
+
+### DragDropCustomize.vi
+### DragDropMoveCopy.vi
+
+`TreeView` 内のアイテムのドラッグドロップを詳細にせぎょできるようにする
+
+- シンボルごとに親子関係を作成可能かどうかを指定できる
+
+[`utilities/ScriptManager.vi`](../../utilities/ScriptManager.vi) が使用例になっている
+
+
+### GetChildren.vi
+
+`ParentTag` で指定した要素の子要素のタグを配列にして返す
+
+![](image4md/panel-TreeViewGetChildren.png)
+
+### GetParent.vi
+
+`Tag` で指定した要素の親要素のタグと兄弟要素中でのインデックスを返す
+
+親がいなければ空文字列が返る
+
+![](image4md/panel-TreeViewGetParent.png)
+
+
