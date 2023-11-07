@@ -251,4 +251,10 @@ LabVIEW メタプログラミングの勧め
   - `SetFrontPanelSize.vi` で位置も設定できるようにした
   - `TextControlledInstrum` を `.lvlib` 化して VI 名を短くした
   - `SetGetControlValue` も `.lvlib` 化した
-
+  - `VIPropertyPicker` 
+    - リロード機能が実装されていなかったので実装した
+    - ショートカットキーは `F5` ではなく `Ctrl+R` とした
+  - `ScriptManager`
+    - `AppendScript` で `Store Undo Entry` が2回呼ばれていたのを直した
+    - `AppendScript` で自身を前面に出すようにした
+    - 初回の `Load` で `editor refs` が未定義だったのを直した
