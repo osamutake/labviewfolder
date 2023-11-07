@@ -4,7 +4,7 @@
 	<Property Name="NI.Lib.SourceVersion" Type="Int">553680896</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Item Name="ExecuteItem.vi" Type="VI" URL="../ExecuteItem.vi"/>
-	<Item Name="ScriptManagerLoadFromText.vi" Type="VI" URL="../ScriptManagerLoadFromText.vi"/>
+	<Item Name="LoadFromText.vi" Type="VI" URL="../LoadFromText.vi"/>
 	<Item Name="NewItem.vi" Type="VI" URL="../NewItem.vi"/>
 	<Item Name="OpenCloseSymbols.vi" Type="VI" URL="../OpenCloseSymbols.vi"/>
 	<Item Name="SaveToText.vi" Type="VI" URL="../SaveToText.vi"/>

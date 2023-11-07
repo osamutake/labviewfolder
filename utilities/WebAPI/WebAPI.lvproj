@@ -400,14 +400,13 @@
 			<Item Name="EnumApplications.vi" Type="VI" URL="../../../lib/SetGetControlValue/EnumApplications.vi"/>
 			<Item Name="FileMultipleBackup.vi" Type="VI" URL="../../../lib/File/FileMultipleBackup.vi"/>
 			<Item Name="FlattenPageSelecter.vi" Type="VI" URL="../../../lib/SetGetControlValue/FlattenPageSelecter.vi"/>
-			<Item Name="GetDisplayName.vi" Type="VI" URL="../../SettingManager/GetDisplayName.vi"/>
+			<Item Name="GetControlValuesDisplayName.vi" Type="VI" URL="../../../lib/SetGetControlValue/GetControlValuesDisplayName.vi"/>
 			<Item Name="InsertMenuItemsWithShortcut.vi" Type="VI" URL="../../../lib/UI/InsertMenuItemsWithShortcut.vi"/>
 			<Item Name="JSONObjectToMap.vi" Type="VI" URL="../../../lib/String/JSON/JSONObjectToMap.vi"/>
 			<Item Name="JSONtoArrayValue.vi" Type="VI" URL="../../../lib/SetGetControlValue/JSONtoArrayValue.vi"/>
 			<Item Name="JSONtoControlValue.vi" Type="VI" URL="../../../lib/SetGetControlValue/JSONtoControlValue.vi"/>
 			<Item Name="JSONtoControlValueCore.vi" Type="VI" URL="../../../lib/SetGetControlValue/JSONtoControlValueCore.vi"/>
-			<Item Name="ListControlNames.vi" Type="VI" URL="../../SettingManager/ListControlNames.vi"/>
-			<Item Name="LoadFromText.vi" Type="VI" URL="../../ScriptManager/LoadFromText.vi"/>
+			<Item Name="ListControlNames.vi" Type="VI" URL="../../ParameterSweeper/ListControlNames.vi"/>
 			<Item Name="LogToStringControl.vi" Type="VI" URL="../../../lib/UI/LogToStringControl.vi"/>
 			<Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
