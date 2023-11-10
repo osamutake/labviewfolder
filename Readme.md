@@ -3,7 +3,7 @@
 
 公開可能なものをここに公開します。
 
-内容一覧
+このプロジェクトのフォルダ構成
 --
 
 - `applications/` この git に含めない個別のアプリケーションを置く
@@ -65,9 +65,10 @@ https://github.com/osamutake/labviewfolder
 このドキュメントは GitHub 上で参照すると見やすいです。
 
 - [個人的に使っている LabView 用のワーキングフォルダーです](#個人的に使っている-labview-用のワーキングフォルダーです)
-  - [内容一覧](#内容一覧)
+  - [このプロジェクトのフォルダ構成](#このプロジェクトのフォルダ構成)
   - [GitHub アドレス](#github-アドレス)
   - [ライセンス](#ライセンス)
+  - [VI 間の Diff の取り方](#vi-間の-diff-の取り方)
   - [LabVIEW メタプログラミングの勧め](#labview-メタプログラミングの勧め)
   - [改訂履歴](#改訂履歴)
 
@@ -82,6 +83,20 @@ https://github.com/osamutake/labviewfolder
 --
 MIT ライセンスとしますので自由にご利用ください。
 
+VI 間の Diff の取り方
+--
+
+.vi ファイルは LabVIEW 付属の `LVCompare.exe` を使うとグラフィカルに差分を確認できます。
+
+手元では `TortoiseGit.exe` を使って git 履歴を管理していますが、TortoiseGit の [Settings] メニューから [Diff Viewer] で [Advanced...] ボタンを押して .vi の Extention specific programs に、
+
+```
+"C:\Program Files\National Instruments\Shared\LabVIEW Compare\LVCompare.exe" %base %mine
+```
+
+を設定すれば、`diff` のメニューを選ぶだけで `LVCompare.exe` が立上りグラフィカルに差分を確認できるようになります。
+
+![](image4md/TortoiseGit-LVCompare.png)
 
 LabVIEW メタプログラミングの勧め
 --
