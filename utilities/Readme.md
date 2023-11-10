@@ -57,7 +57,7 @@ ScriptManager.vi
     - 値の設定順やタイミングも自由に決められるため複雑な手順を実現可能
     - 文法の詳細は [`SetControlValues.vi`](../lib/SetGetControlValue/#setcontrolvaluesvi) を参照
 - `Script` エディター右の `VI Property Picker` ボタンで `VIPropertyPicker.vi` が起動する
-  - 現在開かれている `VI` の一覧から `VI` を選択すれば `VI` 上のコントロールの一覧が現れっるので、設定対象としたいものを選択すればスクリプトが作成される
+  - 現在開かれている `VI` の一覧から `VI` を選択すれば `VI` 上のコントロールの一覧が現れるので、設定対象としたいものを選択すればスクリプトが作成される
   - `Append To Editor in ScriptManager` ボタンを押すと `Script` エディタの末尾にスクリプトが追加される
   - 詳しい使い方は下記参照
 - ドキュメントフォルダーの LabVIEW Data というフォルダに `ScriptManager.ini` というファイルができていて、ここにすべての設定が保存される
