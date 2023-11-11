@@ -25,6 +25,7 @@
 			<Item Name="example-VariantClusterAccessMulti.vi" Type="VI" URL="../../../lib/Variant/image4md/example-VariantClusterAccessMulti.vi"/>
 			<Item Name="example-VINameToVI.vi" Type="VI" URL="../../../lib/SetGetControlValue/image4md/example-VINameToVI.vi"/>
 			<Item Name="experiment-CoerseNumericType.vi" Type="VI" URL="../../../lib/Variant/image4md/experiment-CoerseNumericType.vi"/>
+			<Item Name="RegularExpressionEscape.vi" Type="VI" URL="../../../lib/String/RegularExpressionEscape.vi"/>
 			<Item Name="StandardMethodsForSetGetControlValues.vi" Type="VI" URL="../../../lib/SetGetControlValue/image4md/StandardMethodsForSetGetControlValues.vi"/>
 			<Item Name="test-CoerseNumericTypeFixedPoint.vi" Type="VI" URL="../../../lib/Variant/test/test-CoerseNumericTypeFixedPoint.vi"/>
 			<Item Name="test-SetGetControlValueSub.vi" Type="VI" URL="../../../lib/SetGetControlValue/test/test-SetGetControlValueSub.vi"/>
@@ -392,6 +393,7 @@
 				<Item Name="VISA Configure Serial Port (Serial Instr).vi" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port (Serial Instr).vi"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
+			<Item Name="AppendReplaceScript.vi" Type="VI" URL="../../ScriptManager/AppendReplaceScript.vi"/>
 			<Item Name="AssertSubtexts.vi" Type="VI" URL="../../../lib/String/AssertSubtexts.vi"/>
 			<Item Name="CoerseNumericType.vi" Type="VI" URL="../../../lib/Variant/CoerseNumericType.vi"/>
 			<Item Name="CoerseNumericTypeFixedPoint.vi" Type="VI" URL="../../../lib/Variant/CoerseNumericTypeFixedPoint.vi"/>
@@ -409,6 +411,7 @@
 			<Item Name="ParseJSONObjectKey.vi" Type="VI" URL="../../../lib/String/JSON/ParseJSONObjectKey.vi"/>
 			<Item Name="ParseJSONString.vi" Type="VI" URL="../../../lib/String/JSON/ParseJSONString.vi"/>
 			<Item Name="RaiseErrorIf.vi" Type="VI" URL="../../../lib/RaiseErrorIf.vi"/>
+			<Item Name="ScriptBreakout.vi" Type="VI" URL="../../ScriptManager/ScriptBreakout.vi"/>
 			<Item Name="ScriptManager.lvlib" Type="Library" URL="../../ScriptManager/ScriptManager.lvlib"/>
 			<Item Name="SequentialFileName.vi" Type="VI" URL="../../../lib/File/SequentialFileName.vi"/>
 			<Item Name="SerialPortSetup.vi" Type="VI" URL="../../../lib/Hardware/SerialPortSetup.vi"/>
