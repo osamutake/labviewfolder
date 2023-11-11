@@ -58,7 +58,7 @@ ScriptManager.vi
     - 文法の詳細は [`SetControlValues.vi`](../lib/SetGetControlValue/#setcontrolvaluesvi) を参照
 - `Script` エディター右の `VI Property Picker` ボタンで `VIPropertyPicker.vi` が起動する
   - 現在開かれている `VI` の一覧から `VI` を選択すれば `VI` 上のコントロールの一覧が現れるので、設定対象としたいものを選択すればスクリプトが作成される
-  - `Append To Editor in ScriptManager` ボタンを押すと `Script` エディタの末尾にスクリプトが追加される
+  - `Append To Editor` ボタンを押すと `Script` エディタの末尾にスクリプトが追加される
   - 詳しい使い方は下記参照
 - ドキュメントフォルダーの LabVIEW Data というフォルダに `ScriptManager.ini` というファイルができていて、ここにすべての設定が保存される
   - Windows なら `C:\Users\(ユーザー名)\Documents\LabVIEW Data\ScriptManager.ini`
@@ -79,7 +79,9 @@ VIPropertyPicker.vi
   - リロードするには `Ctrl+R`
   - 上部の ◆ 付きのものは `VI` の表示位置や実行状態を変更するためのコマンド
 - コントロールやコマンドを `Ctrl+Click` で選択すると右下にそれらを設定するためのスクリプトが表示される
-- このスクリプトをコピー＆ペーストするか、`Append to Editor in ScriptManger` ボタンで `ScriptManger` に送ることで利用する
+- このスクリプトをコピー＆ペーストするか、`Append to Editor` ボタン、`Replace Values` ボタンで `ScriptManger` に送ることで利用する
+  - `Append to Editor` ボタンを押すと `ScriptManager` の `Script` エディタの末尾に追加される
+  - `Replace Values` ボタンを押すと `ScriptManager` の `Script` エディタの対応する代入文の「値」部分が更新される
 - コマンド一覧
   - `/load` : `VI` を読み込みフロントパネルを開く
   - `/front` : `VI` を読み込み最前面に表示
