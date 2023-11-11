@@ -393,7 +393,6 @@
 				<Item Name="VISA Configure Serial Port (Serial Instr).vi" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port (Serial Instr).vi"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
-			<Item Name="AppendReplaceScript.vi" Type="VI" URL="../../ScriptManager/AppendReplaceScript.vi"/>
 			<Item Name="AssertSubtexts.vi" Type="VI" URL="../../../lib/String/AssertSubtexts.vi"/>
 			<Item Name="CoerseNumericType.vi" Type="VI" URL="../../../lib/Variant/CoerseNumericType.vi"/>
 			<Item Name="CoerseNumericTypeFixedPoint.vi" Type="VI" URL="../../../lib/Variant/CoerseNumericTypeFixedPoint.vi"/>
@@ -411,7 +410,6 @@
 			<Item Name="ParseJSONObjectKey.vi" Type="VI" URL="../../../lib/String/JSON/ParseJSONObjectKey.vi"/>
 			<Item Name="ParseJSONString.vi" Type="VI" URL="../../../lib/String/JSON/ParseJSONString.vi"/>
 			<Item Name="RaiseErrorIf.vi" Type="VI" URL="../../../lib/RaiseErrorIf.vi"/>
-			<Item Name="ScriptBreakout.vi" Type="VI" URL="../../ScriptManager/ScriptBreakout.vi"/>
 			<Item Name="ScriptManager.lvlib" Type="Library" URL="../../ScriptManager/ScriptManager.lvlib"/>
 			<Item Name="SequentialFileName.vi" Type="VI" URL="../../../lib/File/SequentialFileName.vi"/>
 			<Item Name="SerialPortSetup.vi" Type="VI" URL="../../../lib/Hardware/SerialPortSetup.vi"/>
