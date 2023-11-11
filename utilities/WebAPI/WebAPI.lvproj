@@ -25,6 +25,7 @@
 			<Item Name="example-VariantClusterAccessMulti.vi" Type="VI" URL="../../../lib/Variant/image4md/example-VariantClusterAccessMulti.vi"/>
 			<Item Name="example-VINameToVI.vi" Type="VI" URL="../../../lib/SetGetControlValue/image4md/example-VINameToVI.vi"/>
 			<Item Name="experiment-CoerseNumericType.vi" Type="VI" URL="../../../lib/Variant/image4md/experiment-CoerseNumericType.vi"/>
+			<Item Name="RegularExpressionEscape.vi" Type="VI" URL="../../../lib/String/RegularExpressionEscape.vi"/>
 			<Item Name="StandardMethodsForSetGetControlValues.vi" Type="VI" URL="../../../lib/SetGetControlValue/image4md/StandardMethodsForSetGetControlValues.vi"/>
 			<Item Name="test-CoerseNumericTypeFixedPoint.vi" Type="VI" URL="../../../lib/Variant/test/test-CoerseNumericTypeFixedPoint.vi"/>
 			<Item Name="test-SetGetControlValueSub.vi" Type="VI" URL="../../../lib/SetGetControlValue/test/test-SetGetControlValueSub.vi"/>

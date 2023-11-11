@@ -36,6 +36,7 @@
       - `ParseJSONString.vi` : JSON の文字列要素を LabVIEW 文字列に変換
       - `StringToJSON.vi` : LabVIEW 文字列をJSON の文字列要素に変換
     - `AssertSubTexts.vi` : 文字列の指定位置に候補文字列のうちどれかが現れることを確認
+    - `RegularExpressionEscape.vi` : 正規表現用に文字列をエスケープする
     - `StringArrayIntersection.vi` : ２つの文字列配列に共通して現れる文字列だけを含めた配列を返す
     - `StringArrayToSet.vi` : 文字列配列を文字列Setに変換
     - `StringBeginWith.vi` : 文字列が指定の文字列から開始することを確かめる
