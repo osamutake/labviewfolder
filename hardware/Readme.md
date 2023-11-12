@@ -32,6 +32,7 @@ ADCDataRecorder.vi = ADC の電圧値を記録するアプリ
   - 計測パラメータを保存しておくのに便利なはず
   - VI 名とコントロール名のリストの指定の仕方は [GetControlValues.vi の説明](../lib/SetGetControlValue/#getcontrolvaluesvi) を参照のこと
   - `Time` と `NChannels` はそれぞれ現在時刻とチャンネル数で、これらの値もデータファイルのヘッダーに保存される
+- `Physical Channels` を始めとする設定値は `C:\Users\(ユーザ名)\Documents\LabVIEW Data\ADCDataRecorder.ini` に保存され次回起動時に復帰される
 
 データファイルの構造は、測定情報を含めたヘッダー部に測定結果のバイナリデータが続く形になる。
 
