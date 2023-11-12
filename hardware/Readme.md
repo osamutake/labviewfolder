@@ -32,6 +32,7 @@ ADCDataRecorder.vi = ADC の電圧値を記録するアプリ
   - 計測パラメータを保存しておくのに便利なはず
   - VI 名とコントロール名のリストの指定の仕方は [GetControlValues.vi の説明](../lib/SetGetControlValue/#getcontrolvaluesvi) を参照のこと
   - `Time` と `NChannels` はそれぞれ現在時刻とチャンネル数で、これらの値もデータファイルのヘッダーに保存される
+- `Physical Channels` を始めとする設定値は `C:\Users\(ユーザ名)\Documents\LabVIEW Data\ADCDataRecorder.ini` に保存され次回起動時に復帰される
 
 データファイルの構造は、測定情報を含めたヘッダー部に測定結果のバイナリデータが続く形になる。
 
@@ -60,9 +61,9 @@ DACSinglePoint.vi = DAC の電圧値を制御するアプリ
 - このアプリだけだと人がちまちま値を入れて電圧を変えることしかできない
 - [`ParameterSweeper.vi`](../utilities/#parametersweepervi) と組み合わせて使うのがこのアプリの主な用途
   - VI 名 `DaACSinglePoint`
-  - コントロール名 `Label & Value & Coefficient[0]/Value`
+  - コントロール名 `Values[0]/Value`
   - などとして [`ParameterSweeper.vi`](../utilities/#parametersweepervi) で値を掃引可能
-- 異なる測定ごとに [`SettingManager.vi`](../utilities/#settingmanagervi) で `Physical channels`, `Label & Value & Coefficient` の値を設定すると使い勝手が良いはず
+- 異なる測定ごとに [`ScriptManager.vi`](../utilities/#scriptmanagervi) で `Physical channels`, `Values` の値を設定すると使い勝手が良いはず
 
 SignalRecovery7280Lock-inAmp.vi
 --
