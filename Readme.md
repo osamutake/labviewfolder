@@ -13,7 +13,7 @@
   - `NFCorpLI5640Lock-inAmp.vi` : ロックインアンプ LI5640 の設定を行う（シリアル接続）
   - `SignalRecovery7280Lock-inAmp.vi` : ロックインアンプ 7280 の設定を行う（シリアル接続）
   - `StanfordSysResDG645DelayGenerator.vi` : ディレイジェネレータ DG645 の制御を行う（LAN 接続）
-  - `TectronixDPO4000OscilloScope.vi` : オシロスコープ DPO4000 シリーズの制御を行う（LAN 接続）
+  - `TektronixDPO4000OscilloScope.vi` : オシロスコープ DPO4000 シリーズの制御を行う（LAN 接続）
 - [`lib/`](lib/) 汎用のサブ VI ライブラリ
   - [`lib/File/`](lib/File) ファイル関連
     - `FileMultipleBackup.vi` : 複数世代にわたるバックアップファイルを管理
