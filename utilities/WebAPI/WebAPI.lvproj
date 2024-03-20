@@ -410,6 +410,7 @@
 			<Item Name="ParseJSONObjectKey.vi" Type="VI" URL="../../../lib/String/JSON/ParseJSONObjectKey.vi"/>
 			<Item Name="ParseJSONString.vi" Type="VI" URL="../../../lib/String/JSON/ParseJSONString.vi"/>
 			<Item Name="RaiseErrorIf.vi" Type="VI" URL="../../../lib/RaiseErrorIf.vi"/>
+			<Item Name="RunAClone.vi" Type="VI" URL="../../../lib/UI/RunAClone.vi"/>
 			<Item Name="ScriptManager.lvlib" Type="Library" URL="../../ScriptManager/ScriptManager.lvlib"/>
 			<Item Name="SequentialFileName.vi" Type="VI" URL="../../../lib/File/SequentialFileName.vi"/>
 			<Item Name="SerialPortSetup.vi" Type="VI" URL="../../../lib/Hardware/SerialPortSetup.vi"/>
@@ -417,6 +418,7 @@
 			<Item Name="SetGetControlValue.lvlib" Type="Library" URL="../../../lib/SetGetControlValue/SetGetControlValue.lvlib"/>
 			<Item Name="SlippyInterval.vi" Type="VI" URL="../../ParameterSweeper/SlippyInterval.vi"/>
 			<Item Name="StanfordResSysDG645DelayGeneratorFromDLAY.vi" Type="VI" URL="../../../hardware/StanfordResSysDG645DelayGeneratorFromDLAY.vi"/>
+			<Item Name="StanfordResSysDG645DelayGeneratorIOQueue.ctl" Type="VI" URL="../../../hardware/StanfordResSysDG645DelayGeneratorIOQueue.ctl"/>
 			<Item Name="StanfordResSysDG645DelayGeneratorToDLAY.vi" Type="VI" URL="../../../hardware/StanfordResSysDG645DelayGeneratorToDLAY.vi"/>
 			<Item Name="StringArrayIntersection.vi" Type="VI" URL="../../../lib/String/StringArrayIntersection.vi"/>
 			<Item Name="StringArrayToSet.vi" Type="VI" URL="../../../lib/String/StringArrayToSet.vi"/>
